@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ "${EUID}" -ne 0 ]; then
-		echo "You need to run this script as root"
+		echo "You need to run this one as root"
 		exit 1
 fi
 if [ "$(systemd-detect-virt)" == "openvz" ]; then
@@ -16,16 +16,16 @@ NC='\e[0m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 CEKEXPIRED () {
     today=$(date -d +1day +%Y-%m-%d)
-    Exp1=$(curl -sS https://raw.githubusercontent.com/Iansoftware/userip/main/bossip | grep $MYIP | awk '{print $3}')
+    Exp1=$(curl -sS https://raw.githubusercontent.com/rajakabur/userip/main/bossip | grep $MYIP | awk '{print $3}')
     if [[ $today < $Exp1 ]]; then
-    echo -e "\e[32mSTATUS SCRIPT AKTIF...\e[0m"
+    echo -e "\e[32mSTATUS one AKTIF...\e[0m"
     else
-    echo -e "\e[31mSCRIPT ANDA EXPIRED!\e[0m";
+    echo -e "\e[31mone ANDA EXPIRED!\e[0m";
     echo -e "\e[31mRenew IP letak tempoh banyak kit okay? hehe syg ktk #\e[0m"
     exit 0
 fi
 }
-IZIN=$(curl -sS https://raw.githubusercontent.com/Iansoftware/userip/main/bossip | awk '{print $4}' | grep $MYIP)
+IZIN=$(curl -sS https://raw.githubusercontent.com/rajakabur/userip/main/bossip | awk '{print $4}' | grep $MYIP)
 if [ $MYIP = $IZIN ]; then
 echo -e "\e[32mPermission Accepted...\e[0m"
 CEKEXPIRED
@@ -37,14 +37,14 @@ exit 0
 fi
 clear
 if [ -f "/etc/rare/xray/domain" ]; then
-echo "Script Already Installed"
+echo "one Already Installed"
 exit 0
 fi
 clear
 echo ""
 echo ""
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e " \E[0;100;33m        • AutoScript by IANVPN •            \E[0m"
+echo -e " \E[0;100;33m        • Autoone by vpn123 •            \E[0m"
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\e[92m             ___   _   _  ___   _____ _  _    "
 echo -e "\e[92m            |_ _| /_\ | \| \ \ / / _ \ \| |   "
@@ -52,8 +52,8 @@ echo -e "\e[92m             | | / _ \|    |\ V /|  _/    |   "
 echo -e "\e[92m            |___/_/ \_\_|\_| \_/ |_| |_|\_|   "
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo "" 
-echo -e "$green               Telegram:$NC $red@IanVPN               $NC"
-echo -e "$green        Script Version:$NC $red VERSI LONAKK GEMOK          $NC"
+echo -e "$green               Telegram:$NC $red@vpn123               $NC"
+echo -e "$green        one Version:$NC $red VERSI LONAKK GEMOK          $NC"
 echo ''
 echo -e "$green              Proses akan mula dalam 5 Saat!            $NC"
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -75,14 +75,14 @@ mkdir -p /etc/rare/v2ray/conf
 mkdir -p /etc/systemd/system/
 mkdir -p /var/log/xray/
 mkdir -p /var/log/v2ray/
-mkdir /var/lib/premium-script;
+mkdir /var/lib/premium-one;
 touch /etc/rare/xray/clients.txt
 touch /etc/rare/v2ray/clients.txt
-echo "IP=$host" >> /var/lib/premium-script/ipvps.conf
+echo "IP=$host" >> /var/lib/premium-one/ipvps.conf
 echo "$host" >> /etc/rare/xray/domain
 echo "$host" >> /root/domain
 echo "LONAK" >> /home/version
-echo "@IanVPN" >> /home/contact
+echo "@vpn123" >> /home/contact
 clear
 secs_to_human() {
     echo "Installation time : $(( ${1} / 3600 )) hours $(( (${1} / 60) % 60 )) minute's $(( ${1} % 60 )) seconds"
@@ -101,7 +101,7 @@ echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━�
 sleep 2
 clear
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "$green Installing AutoScript IANVPN        $NC"
+echo -e "$green Installing Autoone vpn123        $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
 #install ssh ovpn
@@ -109,50 +109,50 @@ echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━�
 echo -e "$green      Install SSH OVPN               $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
-wget https://raw.githubusercontent.com/Iansoftware/Script-IANVPN/main/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
+wget https://raw.githubusercontent.com/rajakabur/onesc/main/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
 #install ssr
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green          Install SSR                $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
-wget https://raw.githubusercontent.com/Iansoftware/Script-IANVPN/main/ssr.sh && chmod +x ssr.sh && screen -S ssr ./ssr.sh
-wget https://raw.githubusercontent.com/Iansoftware/Script-IANVPN/main/sodosok.sh && chmod +x sodosok.sh && screen -S ss ./sodosok.sh
+wget https://raw.githubusercontent.com/rajakabur/onesc/main/ssr.sh && chmod +x ssr.sh && screen -S ssr ./ssr.sh
+wget https://raw.githubusercontent.com/rajakabur/onesc/main/sodosok.sh && chmod +x sodosok.sh && screen -S ss ./sodosok.sh
 #install wireguard
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green        Install Wireguard              $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
-wget https://raw.githubusercontent.com/Iansoftware/Script-IANVPN/main/wg.sh && chmod +x wg.sh && screen -S wg ./wg.sh
+wget https://raw.githubusercontent.com/rajakabur/onesc/main/wg.sh && chmod +x wg.sh && screen -S wg ./wg.sh
 #install v2ray
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green  ISSUE CERT & Install TROJAN GFW       $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
-wget https://raw.githubusercontent.com/Iansoftware/Script-IANVPN/main/ins-vt.sh && chmod +x ins-vt.sh && screen -S v2ray ./ins-vt.sh
+wget https://raw.githubusercontent.com/rajakabur/onesc/main/ins-vt.sh && chmod +x ins-vt.sh && screen -S v2ray ./ins-vt.sh
 #Instal Xray
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green          Install XRAY              $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
-wget https://raw.githubusercontent.com/Iansoftware/Script-IANVPN/main/xray-go.sh && chmod +x xray-go.sh && screen -S xray-go ./xray-go.sh
+wget https://raw.githubusercontent.com/rajakabur/onesc/main/xray-go.sh && chmod +x xray-go.sh && screen -S xray-go ./xray-go.sh
 #Instal Xray
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green           Install V2RAY              $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
-wget https://raw.githubusercontent.com/Iansoftware/Script-IANVPN/main/v2ray-go.sh && chmod +x v2ray-go.sh && screen -S v2ray-go ./v2ray-go.sh
+wget https://raw.githubusercontent.com/rajakabur/onesc/main/v2ray-go.sh && chmod +x v2ray-go.sh && screen -S v2ray-go ./v2ray-go.sh
 #set backup
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green            SET BACKUP               $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
-wget https://raw.githubusercontent.com/Iansoftware/Script-IANVPN/main/set-br.sh && chmod +x set-br.sh && ./set-br.sh
+wget https://raw.githubusercontent.com/rajakabur/onesc/main/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 # install OHP
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green          Install OHP                $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
-wget https://raw.githubusercontent.com/Iansoftware/Script-IANVPN/main/ohp.sh && chmod +x ohp.sh && screen -S ohp ./ohp.sh
+wget https://raw.githubusercontent.com/rajakabur/onesc/main/ohp.sh && chmod +x ohp.sh && screen -S ohp ./ohp.sh
 
 rm -f /root/ssh-vpn.sh
 rm -f /root/ss.sh
@@ -166,8 +166,8 @@ rm -f /root/ohp.sh
 
 cat <<EOF> /etc/systemd/system/autosett.service
 [Unit]
-Description=autosetting
-Documentation=https://ianvpn.xyz
+Deoneion=autosetting
+Documentation=https://vpn123.xyz
 
 [Service]
 Type=oneshot
@@ -179,7 +179,7 @@ WantedBy=multi-user.target
 EOF
 systemctl daemon-reload
 systemctl enable autosett
-wget -O /etc/set.sh "https://raw.githubusercontent.com/Iansoftware/Script-IANVPN/main/set.sh"
+wget -O /etc/set.sh "https://raw.githubusercontent.com/rajakabur/onesc/main/set.sh"
 chmod +x /etc/set.sh
 history -c
 clear
@@ -190,7 +190,7 @@ echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━�
 sleep 2
 echo " "
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e " \E[0;100;33m        • AutoScript by IANVPN •            \E[0m"
+echo -e " \E[0;100;33m        • Autoone by vpn123 •            \E[0m"
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\e[92m             ___   _   _  ___   _____ _  _    "
 echo -e "\e[92m            |_ _| /_\ | \| \ \ / / _ \ \| |   "
@@ -232,7 +232,7 @@ echo "   - Auto-Remove-Expired      : [ON]"  | tee -a log-install.txt
 echo "   - Autobackup Data                "  | tee -a log-install.txt
 echo "   - AutoKill Multi Login User       " | tee -a log-install.txt
 echo "   - Auto Delete Expired Account     " | tee -a log-install.txt
-echo "   - Fully automatic script          " | tee -a log-install.txt
+echo "   - Fully automatic one          " | tee -a log-install.txt
 echo "   - VPS settings                    " | tee -a log-install.txt
 echo "   - Admin Control                   " | tee -a log-install.txt
 echo "   - Change port                     " | tee -a log-install.txt

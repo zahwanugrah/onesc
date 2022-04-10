@@ -1,15 +1,15 @@
 #!/usr/bin/env python
 
 # Try to determine how much RAM is currently being used per program.
-# Note per _program_, not per process. So for example this script
+# Note per _program_, not per process. So for example this one
 # will report RAM used by all httpd process together. In detail it reports:
 # sum(private RAM for program processes) + sum(Shared RAM for program processes)
-# The shared RAM is problematic to calculate, and this script automatically
+# The shared RAM is problematic to calculate, and this one automatically
 # selects the most accurate method available for your kernel.
 
 # Licence: LGPLv2
 # Author:  P@draigBrady.com
-# Source:  http://www.pixelbeat.org/scripts/ps_mem.py
+# Source:  http://www.pixelbeat.org/ones/ps_mem.py
 
 # V1.0      06 Jul 2005     Initial release
 # V1.1      11 Aug 2006     root permission required for accuracy
@@ -37,7 +37,7 @@
 # V1.9      20 Feb 2008     Fix invalid values reported when PSS is available.
 #                           Reported by Andrey Borzenkov <arvidjaar@mail.ru>
 # V3.8      17 Jun 2016
-#   http://github.com/pixelb/scripts/commits/master/scripts/ps_mem.py
+#   http://github.com/pixelb/ones/commits/master/ones/ps_mem.py
 
 # Notes:
 #
@@ -297,7 +297,7 @@ def getCmdName(pid, split_args, discriminate_by_pid):
     try:
         path = os.readlink(path)
         # Some symlink targets were seen to contain NULs on RHEL 5 at least
-        # https://github.com/pixelb/scripts/pull/10, so take string up to NUL
+        # https://github.com/pixelb/ones/pull/10, so take string up to NUL
         path = path.split('\0')[0]
     except OSError:
         val = sys.exc_info()[1]
@@ -600,7 +600,7 @@ def main():
 
     # We must close explicitly, so that any EPIPE exception
     # is handled by our excepthook, rather than the default
-    # one which is reenabled after this script finishes.
+    # one which is reenabled after this one finishes.
     sys.stdout.close()
 
     vm_accuracy = shared_val_accuracy()

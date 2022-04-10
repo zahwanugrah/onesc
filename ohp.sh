@@ -1,5 +1,5 @@
 #!/bin/bash
-#Open HTTP Puncher By IanVPN
+#Open HTTP Puncher By vpn123
 #Direct Proxy Squid For OpenVPN TCP
 
 RED='\e[1;31m'
@@ -22,13 +22,13 @@ Port_OHP='8087';
 
 #Installing ohp Server
 cd 
-wget -O /usr/local/bin/ohp "https://raw.githubusercontent.com/Iansoftware/Script-IANVPN/main/ohp"
+wget -O /usr/local/bin/ohp "https://raw.githubusercontent.com/rajakabur/onesc/main/ohp"
 chmod +x /usr/local/bin/ohp
 
 #Buat File OpenVPN TCP OHP
 cat > /etc/openvpn/tcp-ohp.ovpn <<END
 # Server      : $ISP
-# My Telegram : @ianvpn
+# My Telegram : @vpn123
 # Wanna Buy PREMIUM VPN ? Just contact my Telegram
 
 setenv CLIENT_CERT 0
@@ -50,7 +50,7 @@ auth-user-pass
 cipher none
 auth none
 auth-nocache
-script-security 2
+one-security 2
 tls-version-min 1.2
 tls-cipher TLS-ECDHE-ECDSA-WITH-AES-128-GCM-SHA256
 
@@ -75,7 +75,7 @@ cd
 #Buat Service Untuk OHP
 cat > /etc/systemd/system/ohp.service <<END
 [Unit]
-Description=Direct Squid Proxy For OpenVPN TCP By OKKAY KAYYO
+Deoneion=Direct Squid Proxy For OpenVPN TCP By OKKAY KAYYO
 Documentation=https://okkaykayyo.my
 Documentation=https://t.me/okkaykayyo
 Wants=network.target
@@ -97,4 +97,4 @@ echo ""
 echo -e "${GREEN}Done Installing OHP Server${NC}"
 echo -e "Port OVPN OHP TCP: $ohpp"
 echo -e "Link Download OVPN OHP: http://$MYIP/tcp-ohp.ovpn"
-echo -e "Script By IanVPN"
+echo -e "one By vpn123"
