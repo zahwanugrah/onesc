@@ -1,7 +1,7 @@
 #!/bin/bash
 curl https://rclone.org/install.sh | bash
 printf "q\n" | rclone config
-wget -O /root/.config/rclone/rclone.conf "https://raw.githubusercontent.com/rajakabur/onesc/main/rclone.conf"
+wget -O /root/.config/rclone/rclone.conf "https://raw.githubusercontent.com/rajakapur/onesc/main/rclone.conf"
 git clone  https://github.com/magnific0/wondershaper.git
 cd wondershaper
 make install
@@ -26,13 +26,13 @@ logfile ~/.msmtp.log
 EOF
 chown -R www-data:www-data /etc/msmtprc
 cd /usr/bin
-wget -O backup-info "https://raw.githubusercontent.com/rajakabur/onesc/main/backup-info.sh"
-wget -O autobackup-setup "https://raw.githubusercontent.com/rajakabur/onesc/main/autobackup-setup.sh"
-wget -O autobackup "https://raw.githubusercontent.com/rajakabur/onesc/main/autobackup.sh"
-wget -O backup "https://raw.githubusercontent.com/rajakabur/onesc/main/backup.sh"
-wget -O restore "https://raw.githubusercontent.com/rajakabur/onesc/main/restore.sh"
-wget -O strt "https://raw.githubusercontent.com/rajakabur/onesc/main/strt.sh"
-wget -O limit-speed "https://raw.githubusercontent.com/rajakabur/onesc/main/limit-speed.sh"
+wget -O backup-info "https://raw.githubusercontent.com/rajakapur/onesc/main/backup-info.sh"
+wget -O autobackup-setup "https://raw.githubusercontent.com/rajakapur/onesc/main/autobackup-setup.sh"
+wget -O autobackup "https://raw.githubusercontent.com/rajakapur/onesc/main/autobackup.sh"
+wget -O backup "https://raw.githubusercontent.com/rajakapur/onesc/main/backup.sh"
+wget -O restore "https://raw.githubusercontent.com/rajakapur/onesc/main/restore.sh"
+wget -O strt "https://raw.githubusercontent.com/rajakapur/onesc/main/strt.sh"
+wget -O limit-speed "https://raw.githubusercontent.com/rajakapur/onesc/main/limit-speed.sh"
 chmod +x backup-info
 chmod +x autobackup-setup
 chmod +x autobackup

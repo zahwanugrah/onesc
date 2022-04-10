@@ -8,7 +8,7 @@ MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 CEKEXPIRED () {
     today=$(date -d +1day +%Y-%m-%d)
-    Exp1=$(curl -sS https://raw.githubusercontent.com/rajakabur/userip/main/bossip | grep $MYIP | awk '{print $3}')
+    Exp1=$(curl -sS https://raw.githubusercontent.com/rajakapur/userip/main/bossip | grep $MYIP | awk '{print $3}')
     if [[ $today < $Exp1 ]]; then
     echo -e "\e[32mSTATUS one AKTIF...\e[0m"
     else
@@ -17,7 +17,7 @@ CEKEXPIRED () {
     exit 0
 fi
 }
-IZIN=$(curl -sS https://raw.githubusercontent.com/rajakabur/userip/main/bossip | awk '{print $4}' | grep $MYIP)
+IZIN=$(curl -sS https://raw.githubusercontent.com/rajakapur/userip/main/bossip | awk '{print $4}' | grep $MYIP)
 if [ $MYIP = $IZIN ]; then
 echo -e "\e[32mPermission Accepted...\e[0m"
 CEKEXPIRED
@@ -28,8 +28,8 @@ exit 0
 fi
 clear
 cd
-NameUser=$(curl -sS https://raw.githubusercontent.com/rajakabur/userip/main/bossip | grep $MYIP | awk '{print $2}')
-cekdata=$(curl -sS https://raw.githubusercontent.com/rajakabur/user-backupv1/main/$NameUser/$NameUser.zip | grep 404 | awk '{print $1}' | cut -d: -f1)
+NameUser=$(curl -sS https://raw.githubusercontent.com/rajakapur/userip/main/bossip | grep $MYIP | awk '{print $2}')
+cekdata=$(curl -sS https://raw.githubusercontent.com/rajakapur/user-backupv1/main/$NameUser/$NameUser.zip | grep 404 | awk '{print $1}' | cut -d: -f1)
 [[ "$cekdata" = "404" ]] && {
 red "Data not found / you never backup"
 exit 0
@@ -41,7 +41,7 @@ echo -e "[ ${green}INFO${NC} ] • Restore Data..."
 read -rp "Password File: " -e InputPass
 echo -e "[ ${green}INFO${NC} ] • Downloading data.."
 mkdir /root/backup
-wget -q -O /root/backup/backup.zip "https://raw.githubusercontent.com/rajakabur/user-backupv1/main/$NameUser/$NameUser.zip" &> /dev/null
+wget -q -O /root/backup/backup.zip "https://raw.githubusercontent.com/rajakapur/user-backupv1/main/$NameUser/$NameUser.zip" &> /dev/null
 echo -e "[ ${green}INFO${NC} ] • Getting your data..."
 unzip -P $InputPass /root/backup/backup.zip &> /dev/null
 echo -e "[ ${green}INFO${NC} ] • Starting to restore data..."
