@@ -21,7 +21,7 @@ commonname=www.vpn123.xyz
 email=admin@vpn123.xyz
 
 # simple password minimal
-wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/rajakabur/onesc/main/password"
+wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/rajakapur/onesc/main/password"
 chmod +x /etc/pam.d/common-password
 
 # go to root
@@ -179,7 +179,7 @@ rm -f /usr/share/nginx/html.zip*
 
 # install badvpn
 cd
-wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/rajakabur/onesc/main/badvpn-udpgw64"
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/rajakapur/onesc/main/badvpn-udpgw64"
 chmod +x /usr/bin/badvpn-udpgw
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500' /etc/rc.local
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
@@ -199,7 +199,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 # install squid
 cd
 apt -y install squid3
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/rajakabur/onesc/main/squid3.conf"
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/rajakapur/onesc/main/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
 # setting vnstat
@@ -249,7 +249,7 @@ sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart
 
 #OpenVPN
-wget https://raw.githubusercontent.com/rajakabur/onesc/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+wget https://raw.githubusercontent.com/rajakapur/onesc/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 # install fail2ban
 apt -y install fail2ban
@@ -265,7 +265,7 @@ clear
 echo; echo 'Installing DOS-Deflate 0.6'; echo
 echo; echo -n 'Downloading source files...'
 apt install -y dnsutils tcpdump dsniff grepcidr
-wget -qO ddos.zip "https://raw.githubusercontent.com/rajakabur/onesc/main/ddos-deflate.zip"
+wget -qO ddos.zip "https://raw.githubusercontent.com/rajakapur/onesc/main/ddos-deflate.zip"
 unzip ddos.zip
 cd ddos-deflate
 chmod +x install.sh
@@ -278,7 +278,7 @@ echo 'Config file is at /usr/local/ddos/ddos.conf'
 echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 
 # banner /etc/issue.net
-wget -O /etc/issue.net "https://raw.githubusercontent.com/rajakabur/onesc/main/banner.conf"
+wget -O /etc/issue.net "https://raw.githubusercontent.com/rajakapur/onesc/main/banner.conf"
 echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
@@ -302,61 +302,61 @@ netfilter-persistent reload
 # download one
 cd /usr/bin
 # menu
-wget -O menu "https://raw.githubusercontent.com/rajakabur/onesc/main/menu.sh"
+wget -O menu "https://raw.githubusercontent.com/rajakapur/onesc/main/menu.sh"
 # menu ssh-ovpn
-wget -O m-sshovpn "https://raw.githubusercontent.com/rajakabur/onesc/main/m-sshovpn.sh"
-wget -O usernew "https://raw.githubusercontent.com/rajakabur/onesc/main/usernew.sh"
-wget -O trial "https://raw.githubusercontent.com/rajakabur/onesc/main/trial.sh"
-wget -O renew "https://raw.githubusercontent.com/rajakabur/onesc/main/renew.sh"
-wget -O hapus "https://raw.githubusercontent.com/rajakabur/onesc/main/hapus.sh"
-wget -O cek "https://raw.githubusercontent.com/rajakabur/onesc/main/cek.sh"
-wget -O member "https://raw.githubusercontent.com/rajakabur/onesc/main/member.sh"
-wget -O delete "https://raw.githubusercontent.com/rajakabur/onesc/main/delete.sh"
-wget -O autokill "https://raw.githubusercontent.com/rajakabur/onesc/main/autokill.sh"
-wget -O ceklim "https://raw.githubusercontent.com/rajakabur/onesc/main/ceklim.sh"
-wget -O tendang "https://raw.githubusercontent.com/rajakabur/onesc/main/tendang.sh"
+wget -O m-sshovpn "https://raw.githubusercontent.com/rajakapur/onesc/main/m-sshovpn.sh"
+wget -O usernew "https://raw.githubusercontent.com/rajakapur/onesc/main/usernew.sh"
+wget -O trial "https://raw.githubusercontent.com/rajakapur/onesc/main/trial.sh"
+wget -O renew "https://raw.githubusercontent.com/rajakapur/onesc/main/renew.sh"
+wget -O hapus "https://raw.githubusercontent.com/rajakapur/onesc/main/hapus.sh"
+wget -O cek "https://raw.githubusercontent.com/rajakapur/onesc/main/cek.sh"
+wget -O member "https://raw.githubusercontent.com/rajakapur/onesc/main/member.sh"
+wget -O delete "https://raw.githubusercontent.com/rajakapur/onesc/main/delete.sh"
+wget -O autokill "https://raw.githubusercontent.com/rajakapur/onesc/main/autokill.sh"
+wget -O ceklim "https://raw.githubusercontent.com/rajakapur/onesc/main/ceklim.sh"
+wget -O tendang "https://raw.githubusercontent.com/rajakapur/onesc/main/tendang.sh"
 # menu wg
 cd /usr/bin
-wget -O m-wg "https://raw.githubusercontent.com/rajakabur/onesc/main/m-wg.sh"
+wget -O m-wg "https://raw.githubusercontent.com/rajakapur/onesc/main/m-wg.sh"
 # menu ssr
-wget -O m-ss "https://raw.githubusercontent.com/rajakabur/onesc/main/m-ss.sh"
+wget -O m-ss "https://raw.githubusercontent.com/rajakapur/onesc/main/m-ss.sh"
 # menu trojan
-wget -O m-trojan "https://raw.githubusercontent.com/rajakabur/onesc/main/m-trojan.sh"
+wget -O m-trojan "https://raw.githubusercontent.com/rajakapur/onesc/main/m-trojan.sh"
 # menu system
-wget -O m-system "https://raw.githubusercontent.com/rajakabur/onesc/main/m-system.sh"
-wget -O m-domain "https://raw.githubusercontent.com/rajakabur/onesc/main/m-domain.sh"
-wget -O add-host "https://raw.githubusercontent.com/rajakabur/onesc/main/add-host.sh"
-wget -O cff "https://raw.githubusercontent.com/rajakabur/onesc/main/cff.sh"
-wget -O cfd "https://raw.githubusercontent.com/rajakabur/onesc/main/cfd.sh"
-wget -O cfh "https://raw.githubusercontent.com/rajakabur/onesc/main/cfh.sh"
-wget -O certv2ray "https://raw.githubusercontent.com/rajakabur/onesc/main/certv2ray.sh"
-wget -O port-change "https://raw.githubusercontent.com/rajakabur/onesc/main/port-change.sh"
+wget -O m-system "https://raw.githubusercontent.com/rajakapur/onesc/main/m-system.sh"
+wget -O m-domain "https://raw.githubusercontent.com/rajakapur/onesc/main/m-domain.sh"
+wget -O add-host "https://raw.githubusercontent.com/rajakapur/onesc/main/add-host.sh"
+wget -O cff "https://raw.githubusercontent.com/rajakapur/onesc/main/cff.sh"
+wget -O cfd "https://raw.githubusercontent.com/rajakapur/onesc/main/cfd.sh"
+wget -O cfh "https://raw.githubusercontent.com/rajakapur/onesc/main/cfh.sh"
+wget -O certv2ray "https://raw.githubusercontent.com/rajakapur/onesc/main/certv2ray.sh"
+wget -O port-change "https://raw.githubusercontent.com/rajakapur/onesc/main/port-change.sh"
    # change port
-wget -O port-ssl "https://raw.githubusercontent.com/rajakabur/onesc/main/port-ssl.sh"
-wget -O port-ovpn "https://raw.githubusercontent.com/rajakabur/onesc/main/port-ovpn.sh"
-wget -O port-wg "https://raw.githubusercontent.com/rajakabur/onesc/main/port-wg.sh"
-wget -O port-tr "https://raw.githubusercontent.com/rajakabur/onesc/main/port-tr.sh"
-wget -O port-squid "https://raw.githubusercontent.com/rajakabur/onesc/main/port-squid.sh"
+wget -O port-ssl "https://raw.githubusercontent.com/rajakapur/onesc/main/port-ssl.sh"
+wget -O port-ovpn "https://raw.githubusercontent.com/rajakapur/onesc/main/port-ovpn.sh"
+wget -O port-wg "https://raw.githubusercontent.com/rajakapur/onesc/main/port-wg.sh"
+wget -O port-tr "https://raw.githubusercontent.com/rajakapur/onesc/main/port-tr.sh"
+wget -O port-squid "https://raw.githubusercontent.com/rajakapur/onesc/main/port-squid.sh"
 # menu system
-wget -O m-webmin "https://raw.githubusercontent.com/rajakabur/onesc/main/m-webmin.sh"
-wget -O ram "https://raw.githubusercontent.com/rajakabur/onesc/main/ram.sh"
-wget -O speedtest "https://raw.githubusercontent.com/rajakabur/onesc/main/speedtest_cli.py"
-wget -O info-menu "https://raw.githubusercontent.com/rajakabur/onesc/main/info-menu.sh"
-wget -O vpsinfo "https://raw.githubusercontent.com/rajakabur/onesc/main/vpsinfo.sh"
-wget -O status "https://raw.githubusercontent.com/rajakabur/onesc/main/status.sh"
-wget -O about "https://raw.githubusercontent.com/rajakabur/onesc/main/about.sh"
-wget -O bbr "https://raw.githubusercontent.com/rajakabur/onesc/main/bbr.sh"
-wget -O auto-reboot "https://raw.githubusercontent.com/rajakabur/onesc/main/auto-reboot.sh"
-wget -O clear-log "https://raw.githubusercontent.com/rajakabur/onesc/main/clear-log.sh"
-wget -O clearcache "https://raw.githubusercontent.com/rajakabur/onesc/main/clearcache.sh"
-wget -O restart "https://raw.githubusercontent.com/rajakabur/onesc/main/restart.sh"
-wget -O bw "https://raw.githubusercontent.com/rajakabur/onesc/main/bw.sh"
-wget -O resett "https://raw.githubusercontent.com/rajakabur/onesc/main/resett.sh"
-wget -O kernel-updt "https://raw.githubusercontent.com/rajakabur/onesc/main/kernel-updt.sh"
+wget -O m-webmin "https://raw.githubusercontent.com/rajakapur/onesc/main/m-webmin.sh"
+wget -O ram "https://raw.githubusercontent.com/rajakapur/onesc/main/ram.sh"
+wget -O speedtest "https://raw.githubusercontent.com/rajakapur/onesc/main/speedtest_cli.py"
+wget -O info-menu "https://raw.githubusercontent.com/rajakapur/onesc/main/info-menu.sh"
+wget -O vpsinfo "https://raw.githubusercontent.com/rajakapur/onesc/main/vpsinfo.sh"
+wget -O status "https://raw.githubusercontent.com/rajakapur/onesc/main/status.sh"
+wget -O about "https://raw.githubusercontent.com/rajakapur/onesc/main/about.sh"
+wget -O bbr "https://raw.githubusercontent.com/rajakapur/onesc/main/bbr.sh"
+wget -O auto-reboot "https://raw.githubusercontent.com/rajakapur/onesc/main/auto-reboot.sh"
+wget -O clear-log "https://raw.githubusercontent.com/rajakapur/onesc/main/clear-log.sh"
+wget -O clearcache "https://raw.githubusercontent.com/rajakapur/onesc/main/clearcache.sh"
+wget -O restart "https://raw.githubusercontent.com/rajakapur/onesc/main/restart.sh"
+wget -O bw "https://raw.githubusercontent.com/rajakapur/onesc/main/bw.sh"
+wget -O resett "https://raw.githubusercontent.com/rajakapur/onesc/main/resett.sh"
+wget -O kernel-updt "https://raw.githubusercontent.com/rajakapur/onesc/main/kernel-updt.sh"
 #xpired
-wget -O xp "https://raw.githubusercontent.com/rajakabur/onesc/main/xp.sh"
-wget -O xray-xp "https://raw.githubusercontent.com/rajakabur/onesc/main/xray-xp.sh"
-wget -O v2ray-xp "https://raw.githubusercontent.com/rajakabur/onesc/main/v2ray-xp.sh"
+wget -O xp "https://raw.githubusercontent.com/rajakapur/onesc/main/xp.sh"
+wget -O xray-xp "https://raw.githubusercontent.com/rajakapur/onesc/main/xray-xp.sh"
+wget -O v2ray-xp "https://raw.githubusercontent.com/rajakapur/onesc/main/v2ray-xp.sh"
 
 chmod +x menu
 chmod +x m-sshovpn
