@@ -9,16 +9,16 @@ MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 CEKEXPIRED () {
     today=$(date -d +1day +%Y-%m-%d)
-    Exp1=$(curl -sS https://raw.githubusercontent.com/Iansoftware/userip/main/bossip | grep $MYIP | awk '{print $3}')
+    Exp1=$(curl -sS https://raw.githubusercontent.com/rajakabur/userip/main/bossip | grep $MYIP | awk '{print $3}')
     if [[ $today < $Exp1 ]]; then
-    echo -e "\e[32mSTATUS SCRIPT AKTIF...\e[0m"
+    echo -e "\e[32mSTATUS one AKTIF...\e[0m"
     else
-    echo -e "\e[31mSCRIPT ANDA EXPIRED!\e[0m";
+    echo -e "\e[31mone ANDA EXPIRED!\e[0m";
     echo -e "\e[31mRenew IP letak tempoh banyak kit okay? hehe syg ktk #\e[0m"
     exit 0
 fi
 }
-IZIN=$(curl -sS https://raw.githubusercontent.com/Iansoftware/userip/main/bossip | awk '{print $4}' | grep $MYIP)
+IZIN=$(curl -sS https://raw.githubusercontent.com/rajakabur/userip/main/bossip | awk '{print $4}' | grep $MYIP)
 if [ $MYIP = $IZIN ]; then
 echo -e "\e[32mPermission Accepted...\e[0m"
 CEKEXPIRED
@@ -30,7 +30,7 @@ fi
 
 IP=$(curl -sS ipinfo.io/ip);
 date=$(date +"%Y-%m-%d")
-NameUser=$(curl -sS https://raw.githubusercontent.com/Iansoftware/userip/main/bossip | grep $MYIP | awk '{print $2}')
+NameUser=$(curl -sS https://raw.githubusercontent.com/rajakabur/userip/main/bossip | grep $MYIP | awk '{print $2}')
 rsleep=$((1 + $RANDOM % 10))
 
 echo -e "[ ${green}INFO${NC} ] Wait $rsleep minutes "
@@ -47,7 +47,7 @@ cp -r /etc/wireguard /root/backup/wireguard &> /dev/null
 #cp /etc/ipsec.d/passwd /root/backup/passwd1 &> /dev/null
 cp /etc/shadowsocks-libev/akun.conf /root/backup/ss.conf &> /dev/null
 #cp -r /home/sstp /root/backup/sstp &> /dev/null
-cp -r /var/lib/premium-script/ /root/backup/premium-script &> /dev/null
+cp -r /var/lib/premium-one/ /root/backup/premium-one &> /dev/null
 cp -r /etc/rare /root/backup/rare &> /dev/null
 cp -r /etc/trojan /root/backup/trojan &> /dev/null
 #cp -r /etc/trojan-go /root/backup/trojan-go &> /dev/null
@@ -64,7 +64,7 @@ zip -rP $password $NameUser.zip backup > /dev/null 2>&1
 ##############++++++++++++++++++++++++#############
 LLatest=`date`
 Get_Data () {
-git clone https://github.com/Iansoftware/user-backupv1.git /root/user-backup/ &> /dev/null
+git clone https://github.com/rajakabur/user-backupv1.git /root/user-backup/ &> /dev/null
 }
 
 Mkdir_Data () {
@@ -84,14 +84,14 @@ mv /root/$NameUser.zip /root/user-backup/$NameUser/
 Save_And_Exit () {
     cd /root/user-backup
     git config --global user.email "claralillian2001@gmail.com" &> /dev/null
-    git config --global user.name "Iansoftware" &> /dev/null
+    git config --global user.name "rajakabur" &> /dev/null
     rm -rf .git &> /dev/null
     git init &> /dev/null
     git add . &> /dev/null
     git commit -m m &> /dev/null
     git branch -M main &> /dev/null
-    git remote add origin https://github.com/Iansoftware/user-backupv1.git
-    git push -f https://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@github.com/Iansoftware/user-backupv1.git &> /dev/null
+    git remote add origin https://github.com/rajakabur/user-backupv1.git
+    git push -f https://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@github.com/rajakabur/user-backupv1.git &> /dev/null
 }
 
 if [ ! -d "/root/user-backup/" ]; then
@@ -106,7 +106,7 @@ sleep 1
 echo -e "[ ${green}INFO${NC} ] Processing updating server...... "
 Save_And_Exit
 fi
-link="https://raw.githubusercontent.com/Iansoftware/user-backupv1/main/$NameUser/$NameUser.zip"
+link="https://raw.githubusercontent.com/rajakabur/user-backupv1/main/$NameUser/$NameUser.zip"
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Backup done "
 sleep 1

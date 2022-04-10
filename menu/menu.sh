@@ -2,7 +2,7 @@
 MYIP=$(curl -sS ipv4.icanhazip.com)
 echo "Checking VPS"
 #########################
-IZIN=$(curl -sS https://raw.githubusercontent.com/Iansoftware/userip/main/bossip | awk '{print $4}' | grep $MYIP)
+IZIN=$(curl -sS https://raw.githubusercontent.com/rajakabur/userip/main/bossip | awk '{print $4}' | grep $MYIP)
 if [ $MYIP = $IZIN ]; then
 echo -e "\e[32mPermission Accepted...\e[0m"
 else
@@ -11,20 +11,20 @@ echo -e "\e[31mDaftar IP dalam github lok sayang okay? mun dah daftar tapi masih
 exit 0
 fi
 #EXPIRED
-expired=$(curl -sS https://raw.githubusercontent.com/Iansoftware/userip/main/bossip | grep $MYIP | awk '{print $3}')
+expired=$(curl -sS https://raw.githubusercontent.com/rajakabur/userip/main/bossip | grep $MYIP | awk '{print $3}')
 echo $expired > /root/expired.txt
 today=$(date -d +1day +%Y-%m-%d)
 while read expired
 do
-	exp=$(echo $expired | curl -sS https://raw.githubusercontent.com/Iansoftware/userip/main/bossip | grep $MYIP | awk '{print $3}')
+	exp=$(echo $expired | curl -sS https://raw.githubusercontent.com/rajakabur/userip/main/bossip | grep $MYIP | awk '{print $3}')
 	if [[ $exp < $today ]]; then
 		Exp2="\033[1;31mExpired\033[0m"
         else
-        Exp2=$(curl -sS https://raw.githubusercontent.com/Iansoftware/userip/main/bossip | grep $MYIP | awk '{print $3}')
+        Exp2=$(curl -sS https://raw.githubusercontent.com/rajakabur/userip/main/bossip | grep $MYIP | awk '{print $3}')
 	fi
 done < /root/expired.txt
 rm /root/expired.txt
-Name=$(curl -sS https://raw.githubusercontent.com/Iansoftware/userip/main/bossip | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/rajakabur/userip/main/bossip | grep $MYIP | awk '{print $2}')
 # Color Validation
 DF='\e[39m'
 Bold='\e[1m'
@@ -118,7 +118,7 @@ echo -e "\e[33m Time                 \e[0m:  $WKT"
 echo -e "\e[33m Day                  \e[0m:  $DAY"
 echo -e "\e[33m Date                 \e[0m:  $DATE"
 echo -e "\e[33m Telegram             \e[0m:  $tele"
-echo -e "\e[33m Script Version       \e[0m:  $Sver"
+echo -e "\e[33m one Version       \e[0m:  $Sver"
 echo -e "\e[33m Certificate status   \e[0m:  \e[33mExpired in ${tlsStatus} days\e[0m"
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\e[33m Traffic\e[0m       \e[33mToday      Yesterday     Month   "
@@ -127,20 +127,20 @@ echo -e "\e[33m Upload\e[0m        $utoday    $uyest       $umon   \e[0m"
 echo -e "\e[33m Total\e[0m       \033[0;36m  $ttoday    $tyest       $tmon  \e[0m "
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "                 • SCRIPT MENU, SAYANG BAU •                 "
+echo -e "                 • one MENU, SAYANG BAU •                 "
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e " [\e[36m•1\e[0m] SSH & OpenVPN Menu  [\e[36m•7\e[0m] SYSTEM Menu"
 echo -e " [\e[36m•2\e[0m] Wireguard Menu      [\e[36m•8\e[0m] Status Service"
 echo -e " [\e[36m•3\e[0m] SSR & SS Menu       [\e[36m•9\e[0m] VPS Information"
-echo -e " [\e[36m•4\e[0m] XRAY Menu           [\e[36m10\e[0m] Script Info"
+echo -e " [\e[36m•4\e[0m] XRAY Menu           [\e[36m10\e[0m] one Info"
 echo -e " [\e[36m•5\e[0m] V2RAY Menu          [\e[36m11\e[0m] Clear RAM Cache"
 echo -e " [\e[36m•6\e[0m] Trojan GFW Menu     [\e[31m12\e[0m] \e[31mREBOOT\033[0m"
 echo -e   ""
-echo -e   " Press x or [ Ctrl+C ] • To-Exit-Script"
+echo -e   " Press x or [ Ctrl+C ] • To-Exit-one"
 echo -e   ""
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e " \e[33mClient Name    \E[0m: $Name"
-echo -e " \e[33mScript Expired \E[0m: $Exp2"
+echo -e " \e[33mone Expired \E[0m: $Exp2"
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e   ""
 read -p " Select menu :  "  opt

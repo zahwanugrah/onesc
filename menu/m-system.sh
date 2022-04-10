@@ -3,16 +3,16 @@ MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 CEKEXPIRED () {
     today=$(date -d +1day +%Y-%m-%d)
-    Exp1=$(curl -sS https://raw.githubusercontent.com/Iansoftware/userip/main/bossip | grep $MYIP | awk '{print $3}')
+    Exp1=$(curl -sS https://raw.githubusercontent.com/rajakabur/userip/main/bossip | grep $MYIP | awk '{print $3}')
     if [[ $today < $Exp1 ]]; then
-    echo -e "\e[32mSTATUS SCRIPT AKTIF...\e[0m"
+    echo -e "\e[32mSTATUS one AKTIF...\e[0m"
     else
-    echo -e "\e[31mSCRIPT ANDA EXPIRED!\e[0m";
+    echo -e "\e[31mone ANDA EXPIRED!\e[0m";
     echo -e "\e[31mRenew IP letak tempoh banyak kit okay? hehe syg ktk #\e[0m"
     exit 0
 fi
 }
-IZIN=$(curl -sS https://raw.githubusercontent.com/Iansoftware/userip/main/bossip | awk '{print $4}' | grep $MYIP)
+IZIN=$(curl -sS https://raw.githubusercontent.com/rajakabur/userip/main/bossip | awk '{print $4}' | grep $MYIP)
 if [ $MYIP = $IZIN ]; then
 echo -e "\e[32mPermission Accepted...\e[0m"
 CEKEXPIRED
@@ -36,7 +36,7 @@ echo -e " [\e[36m•7\e[0m] Webmin Menu"
 echo -e " [\e[36m•8\e[0m] Limit Bandwith Speed Server"
 echo -e " [\e[36m•9\e[0m] Check Usage of Ram"
 echo -e " [\e[36m10\e[0m] Speedtest VPS"
-echo -e " [\e[36m11\e[0m] About Script"
+echo -e " [\e[36m11\e[0m] About one"
 echo -e " [\e[36m12\e[0m] Set Auto Reboot"
 echo -e " [\e[36m13\e[0m] Clear Log"
 echo -e " [\e[36m14\e[0m] Restart All Service"

@@ -6,16 +6,16 @@ MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 CEKEXPIRED () {
     today=$(date -d +1day +%Y-%m-%d)
-    Exp1=$(curl -sS https://raw.githubusercontent.com/Iansoftware/userip/main/bossip | grep $MYIP | awk '{print $3}')
+    Exp1=$(curl -sS https://raw.githubusercontent.com/rajakabur/userip/main/bossip | grep $MYIP | awk '{print $3}')
     if [[ $today < $Exp1 ]]; then
-    echo -e "\e[32mSTATUS SCRIPT AKTIF...\e[0m"
+    echo -e "\e[32mSTATUS one AKTIF...\e[0m"
     else
-    echo -e "\e[31mSCRIPT ANDA EXPIRED!\e[0m";
+    echo -e "\e[31mone ANDA EXPIRED!\e[0m";
     echo -e "\e[31mRenew IP letak tempoh banyak kit okay? hehe syg ktk #\e[0m"
     exit 0
 fi
 }
-IZIN=$(curl -sS https://raw.githubusercontent.com/Iansoftware/userip/main/bossip | awk '{print $4}' | grep $MYIP)
+IZIN=$(curl -sS https://raw.githubusercontent.com/rajakabur/userip/main/bossip | awk '{print $4}' | grep $MYIP)
 if [ $MYIP = $IZIN ]; then
 echo -e "\e[32mPermission Accepted...\e[0m"
 CEKEXPIRED
@@ -33,14 +33,14 @@ echo "Please Input Your Pointing Domain In Cloudflare "
 read -rp "Domain/Host: " -e host
 rm /etc/rare/xray/domain
 echo "$host" >> /etc/rare/xray/domain
-echo "IP=$host" >> /var/lib/premium-script/ipvps.conf
+echo "IP=$host" >> /var/lib/premium-one/ipvps.conf
 echo -e "" 
 #Update Sertificate SSL
 echo "Automatical Update Your Sertificate SSL"
 sleep 3
 echo Starting Update SSL Sertificate
 sleep 0.5
-source /var/lib/premium-script/ipvps.conf
+source /var/lib/premium-one/ipvps.conf
 domain=$IP
 systemctl stop nginx
 systemctl stop xray

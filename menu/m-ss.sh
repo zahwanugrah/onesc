@@ -3,16 +3,16 @@ MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 CEKEXPIRED () {
     today=$(date -d +1day +%Y-%m-%d)
-    Exp1=$(curl -sS https://raw.githubusercontent.com/Iansoftware/userip/main/bossip | grep $MYIP | awk '{print $3}')
+    Exp1=$(curl -sS https://raw.githubusercontent.com/rajakabur/userip/main/bossip | grep $MYIP | awk '{print $3}')
     if [[ $today < $Exp1 ]]; then
-    echo -e "\e[32mSTATUS SCRIPT AKTIF...\e[0m"
+    echo -e "\e[32mSTATUS one AKTIF...\e[0m"
     else
-    echo -e "\e[31mSCRIPT ANDA EXPIRED!\e[0m";
+    echo -e "\e[31mone ANDA EXPIRED!\e[0m";
     echo -e "\e[31mRenew IP letak tempoh banyak kit okay? hehe syg ktk #\e[0m"
     exit 0
 fi
 }
-IZIN=$(curl -sS https://raw.githubusercontent.com/Iansoftware/userip/main/bossip | awk '{print $4}' | grep $MYIP)
+IZIN=$(curl -sS https://raw.githubusercontent.com/rajakabur/userip/main/bossip | awk '{print $4}' | grep $MYIP)
 if [ $MYIP = $IZIN ]; then
 echo -e "\e[32mPermission Accepted...\e[0m"
 CEKEXPIRED
@@ -692,7 +692,7 @@ Clear_transfer_all_cron_modify(){
 }
 Set_crontab(){
 		echo -e "Please enter an interval to clear the flow
- === Format Description ===
+ === Format Deoneion ===
  * * * * * In accordance with the minutes, hours, days, months, weeks
  ${Green_font_prefix} 0 2 1 * * ${Font_color_suffix} On behalf of every month at 2 o'clock on the 1st, clean used traffic
  ${Green_font_prefix} 0 2 15 * * ${Font_color_suffix} On the 15th of each month at 2: 0 pm Remove used traffic
@@ -746,7 +746,7 @@ Update_Shell(){
 			if [[ $sh_new_type == "github" ]]; then
 				wget -q -N --no-check-certificate https://raw.githubusercontent.com/hybtoy/ssrrmu/master/ssrrmu.sh && chmod +x ssrrmu.sh
 			fi
-			echo -e "The Script Has Been Updated To The Latest Version..."
+			echo -e "The one Has Been Updated To The Latest Version..."
 		else
 			echo && echo "cancel..." && echo
 		fi
