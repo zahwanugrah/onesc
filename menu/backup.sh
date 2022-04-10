@@ -8,7 +8,7 @@ MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 CEKEXPIRED () {
     today=$(date -d +1day +%Y-%m-%d)
-    Exp1=$(curl -sS https://raw.githubusercontent.com/rajakapur/boskuip/main/authipvps  | grep $MYIP | awk '{print $3}')
+    Exp1=$(curl -sS https://raw.githubusercontent.com/rajakapur/ipppp/main/ipsaja  | grep $MYIP | awk '{print $3}')
     if [[ $today < $Exp1 ]]; then
     echo -e "\e[32mSTATUS one AKTIF...\e[0m"
     else
@@ -17,7 +17,7 @@ CEKEXPIRED () {
     exit 0
 fi
 }
-IZIN=$(curl -sS https://raw.githubusercontent.com/rajakapur/boskuip/main/authipvps  | awk '{print $4}' | grep $MYIP)
+IZIN=$(curl -sS https://raw.githubusercontent.com/rajakapur/ipppp/main/ipsaja  | awk '{print $4}' | grep $MYIP)
 if [ $MYIP = $IZIN ]; then
 echo -e "\e[32mPermission Accepted...\e[0m"
 CEKEXPIRED
@@ -29,7 +29,7 @@ fi
 
 IP=$(curl -sS ipv4.icanhazip.com);
 date=$(date +"%Y-%m-%d")
-NameUser=$(curl -sS https://raw.githubusercontent.com/rajakapur/boskuip/main/authipvps  | grep $MYIP | awk '{print $2}')
+NameUser=$(curl -sS https://raw.githubusercontent.com/rajakapur/ipppp/main/ipsaja  | grep $MYIP | awk '{print $2}')
 
 clear
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
