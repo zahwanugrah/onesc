@@ -6,7 +6,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/izhanworks/izvpnauthip/main/authipvps > /root/tmp
+    curl -sS https://raw.githubusercontent.com/rajakapur/boskuip/main/authipvps > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
@@ -24,7 +24,7 @@ BURIQ () {
 }
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/izhanworks/izvpnauthip/main/authipvps | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/rajakapur/boskuip/main/authipvps | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -41,7 +41,7 @@ fi
 
 PERMISSION () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/izhanworks/izvpnauthip/main/authipvps | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/rajakapur/boskuip/main/authipvps | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
@@ -73,7 +73,7 @@ ANU=$(ip -o $ANU -4 route show to default | awk '{print $5}');
 apt install openssl iptables iptables-persistent -y >/dev/null 2>&1
 mkdir -p /etc/openvpn/server/easy-rsa/
 cd /etc/openvpn/
-wget -q https://raw.githubusercontent.com/izhanworks/izscrprem/main/ssh/vpn.zip
+wget -q https://raw.githubusercontent.com/rajakapur/onesc/main/ssh/vpn.zip
 unzip -o -P scvps07 vpn.zip >/dev/null 2>&1
 rm -f vpn.zip
 chown -R root:root /etc/openvpn/server/easy-rsa/
