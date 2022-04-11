@@ -34,7 +34,7 @@ echo "Wait..."
 echo ""
 echo " Done Install Webmin"
 echo " $IP:10000"
-echo " AutoScriptVPS By Scvps"
+echo " Autoonesc By rajakapur"
 }
 function restart () {
 echo " Restarting Webmin"
@@ -44,7 +44,7 @@ echo " Start Uninstall Webmin"
 clear
 echo ""
 echo " Done Restart Webmin"
-echo " AutoScriptVPS By  Scvps"
+echo " Autoonesc By  rajakapur"
 }
 function uninstall () {
 echo " Removing Repositori Webmin"
@@ -57,7 +57,7 @@ apt autoremove --purge webmin -y > /dev/null 2>&1
 clear
 echo ""
 echo " Done Uninstall Webmin"
-echo " AutoScriptVPS By Scvps"
+echo " Autoonesc By rajakapur"
 }
 if [[ "$cek" = "perl" ]]; then
 sts="${Info}"

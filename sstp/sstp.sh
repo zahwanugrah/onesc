@@ -56,7 +56,7 @@ red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
 
-curl -sS https://raw.githubusercontent.com/scvps/scriptvps/main/resources/ascii-home
+curl -sS https://raw.githubusercontent.com/rajakapur/onesc/main/resources/ascii-home
 echo "SSTP"
 echo "Progress..."
 sleep 3
@@ -123,7 +123,7 @@ fi
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Setting config... "
 mv /etc/accel-ppp.conf.dist /etc/accel-ppp.conf > /dev/null 2>&1
-curl -sS "https://raw.githubusercontent.com/scvps/scriptvps/main/sstp/accel.conf" | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/accel-ppp.conf
+curl -sS "https://raw.githubusercontent.com/rajakapur/onesc/main/sstp/accel.conf" | openssl aes-256-cbc -d -a -pass pass:rajakapur07gg -pbkdf2 > /etc/accel-ppp.conf
 sed -i $MYIP2 /etc/accel-ppp.conf
 chmod +x /etc/accel-ppp.conf
 sleep 1
@@ -153,13 +153,13 @@ echo -e "[ ${green}INFO${NC} ] Reload netfilter... "
 sudo netfilter-persistent save > /dev/null 2>&1
 sudo netfilter-persistent reload > /dev/null 2>&1
 #input perintah sstp
-wget -q -O /usr/bin/add-sstp "https://raw.githubusercontent.com/scvps/scriptvps/main/sstp/add-sstp.sh" && chmod +x /usr/bin/add-sstp
-wget -q -O /usr/bin/del-sstp "https://raw.githubusercontent.com/scvps/scriptvps/main/sstp/del-sstp.sh" && chmod +x /usr/bin/del-sstp
-wget -q -O /usr/bin/cek-sstp "https://raw.githubusercontent.com/scvps/scriptvps/main/sstp/cek-sstp.sh" && chmod +x /usr/bin/cek-sstp
-wget -q -O /usr/bin/renew-sstp "https://raw.githubusercontent.com/scvps/scriptvps/main/sstp/renew-sstp.sh" && chmod +x /usr/bin/renew-sstp
-wget -q -O /usr/bin/trial-sstp "https://raw.githubusercontent.com/scvps/scriptvps/main/sstp/trial-sstp.sh" && chmod +x /usr/bin/trial-sstp
-wget -q -O /usr/bin/port-sstp "https://raw.githubusercontent.com/scvps/scriptvps/main/sstp/port-sstp.sh" && chmod +x /usr/bin/port-sstp
-wget -q -O /usr/bin/sstp-menu "https://raw.githubusercontent.com/scvps/scriptvps/main/menu_all/sstp-menu.sh" && chmod +x /usr/bin/sstp-menu
+wget -q -O /usr/bin/add-sstp "https://raw.githubusercontent.com/rajakapur/onesc/main/sstp/add-sstp.sh" && chmod +x /usr/bin/add-sstp
+wget -q -O /usr/bin/del-sstp "https://raw.githubusercontent.com/rajakapur/onesc/main/sstp/del-sstp.sh" && chmod +x /usr/bin/del-sstp
+wget -q -O /usr/bin/cek-sstp "https://raw.githubusercontent.com/rajakapur/onesc/main/sstp/cek-sstp.sh" && chmod +x /usr/bin/cek-sstp
+wget -q -O /usr/bin/renew-sstp "https://raw.githubusercontent.com/rajakapur/onesc/main/sstp/renew-sstp.sh" && chmod +x /usr/bin/renew-sstp
+wget -q -O /usr/bin/trial-sstp "https://raw.githubusercontent.com/rajakapur/onesc/main/sstp/trial-sstp.sh" && chmod +x /usr/bin/trial-sstp
+wget -q -O /usr/bin/port-sstp "https://raw.githubusercontent.com/rajakapur/onesc/main/sstp/port-sstp.sh" && chmod +x /usr/bin/port-sstp
+wget -q -O /usr/bin/sstp-menu "https://raw.githubusercontent.com/rajakapur/onesc/main/menu_all/sstp-menu.sh" && chmod +x /usr/bin/sstp-menu
 
 sleep 1
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }

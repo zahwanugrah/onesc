@@ -15,7 +15,7 @@ IP=$(curl -sS ipv4.icanhazip.com);
 date=$(date +"%Y-%m-%d")
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-NameUser=$(curl -sS https://raw.githubusercontent.com/ahmednajmudeen/tetbot/main/skkkk | grep $MYIP | awk '{print $2}')
+NameUser=$(curl -sS https://raw.githubusercontent.com/rajakapur/onesc/main/skkkk | grep $MYIP | awk '{print $2}')
 
 
 clear
@@ -53,7 +53,7 @@ zip -rP $InputPass $NameUser.zip backup > /dev/null 2>&1
 ##############++++++++++++++++++++++++#############
 LLatest=`date`
 Get_Data () {
-git clone https://github.com/ahmednajmudeen/user-backup-db.git /root/user-backup/ &> /dev/null
+git clone https://github.com/rajakapur/user-backup-db.git /root/user-backup/ &> /dev/null
 }
 
 Mkdir_Data () {
@@ -79,8 +79,8 @@ Save_And_Exit () {
     git add . &> /dev/null
     git commit -m m &> /dev/null
     git branch -M main &> /dev/null
-    git remote add origin https://github.com/ahmednajmudeen/user-backup-db
-    git push -f https://TOKEN Github@github.com/scvps/user-backup-db.git &> /dev/null
+    git remote add origin https://github.com/rajakapur/user-backup-db
+    git push -f https://TOKEN Github@github.com/rajakapur/user-backup-db.git &> /dev/null
 }
 
 if [ ! -d "/root/user-backup/" ]; then
@@ -95,7 +95,7 @@ sleep 1
 echo -e "[ ${green}INFO${NC} ] Processing updating server...... "
 Save_And_Exit
 fi
-link="https://raw.githubusercontent.com/ahmednajmudeen/user-backup-db/main/$NameUser/$NameUser.zip"
+link="https://raw.githubusercontent.com/rajakapur/user-backup-db/main/$NameUser/$NameUser.zip"
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Backup done "
 sleep 1

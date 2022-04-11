@@ -30,12 +30,12 @@ cek=$(netstat -nutlp | grep -w $stl)
 if [[ -z $cek ]]; then
 sed -i "s/$do1/$stl/g" /etc/stunnel/stunnel.conf
 sed -i "s/SSH SSL Websocket       : $do1/SSH SSL Websocket       : $stl/g" /root/log-install.txt
-systemctl stop scvpssshws.service >/dev/null 2>&1
+systemctl stop rajakapursshws.service >/dev/null 2>&1
 tmux kill-session -t sshwsssl >/dev/null 2>&1
 sleep 1
 systemctl daemon-reload >/dev/null 2>&1
-systemctl enable scvpssshws.service >/dev/null 2>&1
-systemctl start scvpssshws.service >/dev/null 2>&1
+systemctl enable rajakapursshws.service >/dev/null 2>&1
+systemctl start rajakapursshws.service >/dev/null 2>&1
 systemctl restart stunnel4 >/dev/null 2>&1
 echo -e "\e[032;1mPort $stl modified successfully\e[0m"
 else

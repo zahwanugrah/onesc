@@ -11,7 +11,7 @@ clear
 red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
-curl -sS https://raw.githubusercontent.com/scvps/scriptvps/main/resources/ascii-home
+curl -sS https://raw.githubusercontent.com/rajakapur/onesc/main/resources/ascii-home
 echo "IPSEC"
 echo "Progress..."
 echo ""
@@ -314,19 +314,19 @@ mkdir -p /run/pluto > /dev/null 2>&1
 service fail2ban restart > /dev/null 2>&1
 service ipsec restart > /dev/null 2>&1
 service xl2tpd restart > /dev/null 2>&1
-wget -q -O /usr/bin/add-l2tp https://raw.githubusercontent.com/scvps/scriptvps/main/ipsec/add-l2tp.sh && chmod +x /usr/bin/add-l2tp
-wget -q -O /usr/bin/del-l2tp https://raw.githubusercontent.com/scvps/scriptvps/main/ipsec/del-l2tp.sh && chmod +x /usr/bin/del-l2tp
-wget -q -O /usr/bin/add-pptp https://raw.githubusercontent.com/scvps/scriptvps/main/ipsec/add-pptp.sh && chmod +x /usr/bin/add-pptp
-wget -q -O /usr/bin/del-pptp https://raw.githubusercontent.com/scvps/scriptvps/main/ipsec/del-pptp.sh && chmod +x /usr/bin/del-pptp
-wget -q -O /usr/bin/renew-pptp https://raw.githubusercontent.com/scvps/scriptvps/main/ipsec/renew-pptp.sh && chmod +x /usr/bin/renew-pptp
-wget -q -O /usr/bin/renew-l2tp https://raw.githubusercontent.com/scvps/scriptvps/main/ipsec/renew-l2tp.sh && chmod +x /usr/bin/renew-l2tp
-wget -q -O /usr/bin/trial-pptp https://raw.githubusercontent.com/scvps/scriptvps/main/ipsec/trial-pptp.sh && chmod +x /usr/bin/trial-pptp
-wget -q -O /usr/bin/trial-l2tp https://raw.githubusercontent.com/scvps/scriptvps/main/ipsec/trial-l2tp.sh && chmod +x /usr/bin/trial-l2tp
+wget -q -O /usr/bin/add-l2tp https://raw.githubusercontent.com/rajakapur/onesc/main/ipsec/add-l2tp.sh && chmod +x /usr/bin/add-l2tp
+wget -q -O /usr/bin/del-l2tp https://raw.githubusercontent.com/rajakapur/onesc/main/ipsec/del-l2tp.sh && chmod +x /usr/bin/del-l2tp
+wget -q -O /usr/bin/add-pptp https://raw.githubusercontent.com/rajakapur/onesc/main/ipsec/add-pptp.sh && chmod +x /usr/bin/add-pptp
+wget -q -O /usr/bin/del-pptp https://raw.githubusercontent.com/rajakapur/onesc/main/ipsec/del-pptp.sh && chmod +x /usr/bin/del-pptp
+wget -q -O /usr/bin/renew-pptp https://raw.githubusercontent.com/rajakapur/onesc/main/ipsec/renew-pptp.sh && chmod +x /usr/bin/renew-pptp
+wget -q -O /usr/bin/renew-l2tp https://raw.githubusercontent.com/rajakapur/onesc/main/ipsec/renew-l2tp.sh && chmod +x /usr/bin/renew-l2tp
+wget -q -O /usr/bin/trial-pptp https://raw.githubusercontent.com/rajakapur/onesc/main/ipsec/trial-pptp.sh && chmod +x /usr/bin/trial-pptp
+wget -q -O /usr/bin/trial-l2tp https://raw.githubusercontent.com/rajakapur/onesc/main/ipsec/trial-l2tp.sh && chmod +x /usr/bin/trial-l2tp
 
 touch /var/lib/scrz-prem/data-user-l2tp > /dev/null 2>&1
 touch /var/lib/scrz-prem/data-user-pptp > /dev/null 2>&1
 
-wget -q -O /usr/bin/ipsec-menu "https://raw.githubusercontent.com/scvps/scriptvps/main/menu_all/ipsec-menu.sh" && chmod +x /usr/bin/ipsec-menu
+wget -q -O /usr/bin/ipsec-menu "https://raw.githubusercontent.com/rajakapur/onesc/main/menu_all/ipsec-menu.sh" && chmod +x /usr/bin/ipsec-menu
 
 sleep 1
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }

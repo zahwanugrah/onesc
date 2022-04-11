@@ -40,7 +40,7 @@ exp=`date -d "$Hariii days" +"%Y-%m-%d"`
 sed -i '/"'""$uuid""'"$/a\,"'""$uuidR""'"' /etc/trojan-go/config.json
 systemctl restart trojan-go
 echo -e "### $TrojanGoTrial $exp $uuidR" | tee -a /etc/trojan-go/akun.conf
-linktrgo="trojan-go://${uuidR}@${domain}:${trgo}/?sni=${domain}&type=ws&host=${domain}&path=/scvps&encryption=none#${TrojanGoTrial}"
+linktrgo="trojan-go://${uuidR}@${domain}:${trgo}/?sni=${domain}&type=ws&host=${domain}&path=/rajakapur&encryption=none#${TrojanGoTrial}"
 clear
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\E[44;1;39m       ⇱ TROJAN GO TRIAL ⇲         \E[0m"
@@ -51,7 +51,7 @@ echo -e "Host : ${domain}"
 echo -e "port : ${trgo}"
 echo -e "Key : ${uuidR}"
 echo -e "Network : ws"
-echo -e "Path : /scvps"
+echo -e "Path : /rajakapur"
 echo -e "link : ${linktrgo}"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "Expired On : $exp"

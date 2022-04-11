@@ -29,12 +29,12 @@ fi
 cek=$(netstat -nutlp | grep -w $stl)
 if [[ -z $cek ]]; then
 sed -i "s/SSH Websocket           : $do1/SSH Websocket           : $stl/g" /root/log-install.txt
-systemctl stop scvpssshws.service >/dev/null 2>&1
+systemctl stop rajakapursshws.service >/dev/null 2>&1
 tmux kill-session -t sshws >/dev/null 2>&1
 sleep 1
 systemctl daemon-reload >/dev/null 2>&1
-systemctl enable scvpssshws.service >/dev/null 2>&1
-systemctl start scvpssshws.service >/dev/null 2>&1
+systemctl enable rajakapursshws.service >/dev/null 2>&1
+systemctl start rajakapursshws.service >/dev/null 2>&1
 echo -e "\e[032;1mPort $stl modified successfully\e[0m"
 else
 echo "Port $stl is used"

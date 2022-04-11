@@ -11,14 +11,14 @@ red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 
 portdb=`cat ~/log-install.txt | grep -w "Dropbear" | cut -d: -f2|sed 's/ //g' | cut -f2 -d","`
 portsshws=`cat ~/log-install.txt | grep -w "SSH Websocket" | cut -d: -f2 | awk '{print $1}'`
-if [ -f "/etc/systemd/system/scvpssshws.service" ]; then
+if [ -f "/etc/systemd/system/rajakapursshws.service" ]; then
 clear
 else
-wget -q -O /usr/bin/proxy3.js "https://raw.githubusercontent.com/ahmednajmudeen/tetbot/main/ssh/proxy3.js"
-cat <<EOF> /etc/systemd/system/scvpssshws.service
+wget -q -O /usr/bin/proxy3.js "https://raw.githubusercontent.com/rajakapur/onesc/main/ssh/proxy3.js"
+cat <<EOF> /etc/systemd/system/rajakapursshws.service
 [Unit]
 Description=WSenabler
-Documentation=scriptvps@copyright
+Documentation=onesc@copyright
 
 [Service]
 Type=simple
@@ -41,10 +41,10 @@ PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
 if [[ ! -z "${PID}" ]]; then
 echo "Already ON !"
 else
-wget -q -O /usr/bin/ssh-wsenabler "https://raw.githubusercontent.com/ahmednajmudeen/tetbot/main/ssh/sshws-true.sh" && chmod +x /usr/bin/ssh-wsenabler && /usr/bin/ssh-wsenabler
+wget -q -O /usr/bin/ssh-wsenabler "https://raw.githubusercontent.com/rajakapur/onesc/main/ssh/sshws-true.sh" && chmod +x /usr/bin/ssh-wsenabler && /usr/bin/ssh-wsenabler
 systemctl daemon-reload >/dev/null 2>&1
-systemctl enable scvpssshws.service >/dev/null 2>&1
-systemctl start scvpssshws.service >/dev/null 2>&1
+systemctl enable rajakapursshws.service >/dev/null 2>&1
+systemctl start rajakapursshws.service >/dev/null 2>&1
 sed -i "/SSH Websocket/c\   - SSH Websocket           : $portsshws [ON]" /root/log-install.txt
 echo -e "${green}SSH Websocket Started${NC}"
 fi
@@ -53,7 +53,7 @@ fi
 function stop() {
 PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
 if [[ ! -z "${PID}" ]]; then
-systemctl stop scvpssshws.service
+systemctl stop rajakapursshws.service
 tmux kill-session -t sshws
 sed -i "/SSH Websocket/c\   - SSH Websocket           : $portsshws [OFF]" /root/log-install.txt
 echo -e "${red}SSH Websocket Stopped${NC}"
