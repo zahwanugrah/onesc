@@ -3,11 +3,52 @@ dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Dat
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 
+BURIQ () {
+    curl -sS https://raw.githubusercontent.com/izhanworks/izvpnauthip/main/authipvps > /root/tmp
+    data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
+    for user in "${data[@]}"
+    do
+    exp=( `grep -E "^### $user" "/root/tmp" | awk '{print $3}'` )
+    d1=(`date -d "$exp" +%s`)
+    d2=(`date -d "$biji" +%s`)
+    exp2=$(( (d1 - d2) / 86400 ))
+    if [[ "$exp2" -le "0" ]]; then
+    echo $user > /etc/.$user.ini
+    else
+    rm -f  /etc/.$user.ini > /dev/null 2>&1
+    fi
+    done
+    rm -f  /root/tmp
+}
+# https://raw.githubusercontent.com/izhanworks/izvpnauthip/main/authipvps 
+MYIP=$(curl -sS ipv4.icanhazip.com)
+Name=$(curl -sS https://raw.githubusercontent.com/izhanworks/izvpnauthip/main/authipvps | grep $MYIP | awk '{print $2}')
+echo $Name > /usr/local/etc/.$Name.ini
+CekOne=$(cat /usr/local/etc/.$Name.ini)
 
-# https://raw.githubusercontent.com/tesbot07/tesbot07/main/skkkk 
-IP=$(curl -sS ipv4.icanhazip.com)
+Bloman () {
+if [ -f "/etc/.$Name.ini" ]; then
+CekTwo=$(cat /etc/.$Name.ini)
+    if [ "$CekOne" = "$CekTwo" ]; then
+           res="Expired"
+    fi
+else
+res="Permission Accepted..."
+fi
+}
 
-
+PERMISSION () {
+    MYIP=$(curl -sS ipv4.icanhazip.com)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/izhanworks/izvpnauthip/main/authipvps | awk '{print $4}' | grep $MYIP)
+    if [ "$MYIP" = "$IZIN" ]; then
+    echo -ne "[ ${green}INFO${NC} ] IP registered "
+    sleep 2
+    Bloman
+    else
+    res="Permission Denied!"
+    fi
+    BURIQ
+}
 
 clear
 red='\e[1;31m'
@@ -44,14 +85,56 @@ echo -e "[ ${tyblue}NOTES${NC} ] I need check your headers first.."
 sleep 2
 echo -e "[ ${green}INFO${NC} ] Checking headers"
 sleep 1
+totet=`uname -r`
+REQUIRED_PKG="linux-headers-$totet"
+PKG_OK=$(dpkg-query -W --showformat='${Status}\n' $REQUIRED_PKG|grep "install ok installed")
+echo Checking for $REQUIRED_PKG: $PKG_OK
+if [ "" = "$PKG_OK" ]; then
+  sleep 2
+  echo -e "[ ${yell}WARNING${NC} ] Try to install ...."
+  echo "No $REQUIRED_PKG. Setting up $REQUIRED_PKG."
+  apt-get --yes install $REQUIRED_PKG
+  sleep 1
+  echo ""
+  sleep 1
+  echo -e "[ ${tyblue}NOTES${NC} ] If error you need.. to do this"
+  sleep 1
+  echo ""
+  sleep 1
+  echo -e "[ ${tyblue}NOTES${NC} ] 1. apt update -y"
+  sleep 1
+  echo -e "[ ${tyblue}NOTES${NC} ] 2. apt upgrade -y"
+  sleep 1
+  echo -e "[ ${tyblue}NOTES${NC} ] 3. apt dist-upgrade -y"
+  sleep 1
+  echo -e "[ ${tyblue}NOTES${NC} ] 4. reboot"
+  sleep 1
+  echo ""
+  sleep 1
+  echo -e "[ ${tyblue}NOTES${NC} ] After rebooting"
+  sleep 1
+  echo -e "[ ${tyblue}NOTES${NC} ] Then run this script again"
+  echo -e "[ ${tyblue}NOTES${NC} ] if you understand then tap enter now"
+  read
+else
+  echo -e "[ ${green}INFO${NC} ] Oke installed"
+fi
 
+ttet=`uname -r`
+ReqPKG="linux-headers-$ttet"
+if ! dpkg -s $ReqPKG  >/dev/null 2>&1; then
+  rm /root/setup.sh >/dev/null 2>&1 
+  exit
+else
+  clear
+fi
 
 
 secs_to_human() {
     echo "Installation time : $(( ${1} / 3600 )) hours $(( (${1} / 60) % 60 )) minute's $(( ${1} % 60 )) seconds"
 }
 start=$(date +%s)
-ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
 sysctl -w net.ipv6.conf.all.disable_ipv6=1 >/dev/null 2>&1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
 
@@ -77,7 +160,18 @@ echo -e "[ ${green}INFO${NC} ] Aight good ... installation file is ready"
 sleep 2
 echo -ne "[ ${green}INFO${NC} ] Check permission : "
 
-
+PERMISSION
+if [ -f /home/needupdate ]; then
+red "Your script need to update first !"
+exit 0
+elif [ "$res" = "Permission Accepted..." ]; then
+green "Permission Accepted!"
+else
+red "Permission Denied!"
+rm setup.sh > /dev/null 2>&1
+sleep 10
+exit 0
+fi
 
 sleep 3
 
@@ -126,7 +220,7 @@ fi
 fi
 
 echo ""
-wget -q https://raw.githubusercontent.com/rajakapur/onesc/main/dependencies
+wget -q https://raw.githubusercontent.com/izhanworks/izscrprem/main/dependencies
 chmod +x dependencies 
 screen -S depen ./dependencies
 rm dependencies
@@ -154,12 +248,12 @@ read answer
                 Then a random domain will be created
                 "
                 sleep 2
-                sub=rajakapur`</dev/urandom tr -dc a-z0-9 | head -c4`
+                sub=scvps`</dev/urandom tr -dc a-z0-9 | head -c4`
                 echo "peler=${sub}" > /root/scdomain
             else
                 echo "peler=$pp" > /root/scdomain
             fi
-        wget -q "https://raw.githubusercontent.com/rajakapur/onesc/main/dll/cf.sh" && chmod +x cf.sh && ./cf.sh
+        wget -q "https://raw.githubusercontent.com/izhanworks/izscrprem/main/dll/cf.sh" && chmod +x cf.sh && ./cf.sh
     fi
 else
 clear
@@ -172,62 +266,62 @@ read -rp "Input ur domain : " -e pp
         Then a random domain will be created
         "
         sleep 2
-        sub=rajakapur`</dev/urandom tr -dc a-z0-9 | head -c4`
+        sub=scvps`</dev/urandom tr -dc a-z0-9 | head -c4`
         echo "peler=${sub}" > /root/scdomain
     else
         echo "peler=$pp" > /root/scdomain
     fi
-wget -q "https://raw.githubusercontent.com/rajakapur/onesc/main/dll/cf.sh" && chmod +x cf.sh && ./cf.sh
+wget -q "https://raw.githubusercontent.com/izhanworks/izscrprem/main/dll/cf.sh" && chmod +x cf.sh && ./cf.sh
 fi
 
-wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/rajakapur/onesc/main/newmenu.sh" && chmod +x /usr/bin/menu
-wget -q "https://raw.githubusercontent.com/rajakapur/onesc/main/ssh/ssh-vpn.sh" && chmod +x ssh-vpn.sh && screen -S sshvpn ./ssh-vpn.sh
+wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/izhanworks/izscrprem/main/newmenu.sh" && chmod +x /usr/bin/menu
+wget -q "https://raw.githubusercontent.com/izhanworks/izscrprem/main/ssh/ssh-vpn.sh" && chmod +x ssh-vpn.sh && screen -S sshvpn ./ssh-vpn.sh
 if [ "$coreselect" = "v2ray" ]; then
-wget -q "https://raw.githubusercontent.com/rajakapur/onesc/main/v2ray/ins-vt.sh" && chmod +x ins-vt.sh && screen -S insvt ./ins-vt.sh
+wget -q "https://raw.githubusercontent.com/izhanworks/izscrprem/main/v2ray/ins-vt.sh" && chmod +x ins-vt.sh && screen -S insvt ./ins-vt.sh
 elif [ "$coreselect" = "xray" ]; then
-wget -q "https://raw.githubusercontent.com/rajakapur/onesc/main/xray/ins-xray.sh" && chmod +x ins-xray.sh && screen -S insxray ./ins-xray.sh
+wget -q "https://raw.githubusercontent.com/izhanworks/izscrprem/main/xray/ins-xray.sh" && chmod +x ins-xray.sh && screen -S insxray ./ins-xray.sh
 fi
-wget -q "https://raw.githubusercontent.com/rajakapur/onesc/main/wireguard/wg.sh" && chmod +x wg.sh && screen -S wg ./wg.sh
-wget -q "https://raw.githubusercontent.com/rajakapur/onesc/main/sstp/sstp.sh" && chmod +x sstp.sh && screen -S sstp ./sstp.sh
-wget -q "https://raw.githubusercontent.com/rajakapur/onesc/main/ipsec/ipsec.sh" && chmod +x ipsec.sh && screen -S ipsec ./ipsec.sh
-wget -q "https://raw.githubusercontent.com/rajakapur/onesc/main/shadowsocks/ss.sh" && chmod +x ss.sh && screen -S ss ./ss.sh
-wget -q "https://raw.githubusercontent.com/rajakapur/onesc/main/shadowsocks/ssr.sh" && chmod +x ssr.sh && screen -S ssr ./ssr.sh
-wget -q "https://raw.githubusercontent.com/rajakapur/onesc/main/dll/system/set-br.sh" && chmod +x set-br.sh && screen -S sbr ./set-br.sh
+wget -q "https://raw.githubusercontent.com/izhanworks/izscrprem/main/wireguard/wg.sh" && chmod +x wg.sh && screen -S wg ./wg.sh
+wget -q "https://raw.githubusercontent.com/izhanworks/izscrprem/main/sstp/sstp.sh" && chmod +x sstp.sh && screen -S sstp ./sstp.sh
+wget -q "https://raw.githubusercontent.com/izhanworks/izscrprem/main/ipsec/ipsec.sh" && chmod +x ipsec.sh && screen -S ipsec ./ipsec.sh
+wget -q "https://raw.githubusercontent.com/izhanworks/izscrprem/main/shadowsocks/ss.sh" && chmod +x ss.sh && screen -S ss ./ss.sh
+wget -q "https://raw.githubusercontent.com/izhanworks/izscrprem/main/shadowsocks/ssr.sh" && chmod +x ssr.sh && screen -S ssr ./ssr.sh
+wget -q "https://raw.githubusercontent.com/izhanworks/izscrprem/main/dll/system/set-br.sh" && chmod +x set-br.sh && screen -S sbr ./set-br.sh
 #extension
 clear
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Downloading extension !!"
 sleep 1
-wget -q -O /usr/bin/xtls "https://raw.githubusercontent.com/rajakapur/onesc/main/xray/xtls.sh" && chmod +x /usr/bin/xtls && xtls && rm -f /usr/bin/xtls
-wget -q -O /usr/bin/setting-menu "https://raw.githubusercontent.com/rajakapur/onesc/main/menu_all/setting-menu.sh" && chmod +x /usr/bin/setting-menu
-wget -q -O /usr/bin/autokill-menu "https://raw.githubusercontent.com/rajakapur/onesc/main/menu_all/autokill-menu.sh" && chmod +x /usr/bin/autokill-menu
-wget -q -O /usr/bin/info-menu "https://raw.githubusercontent.com/rajakapur/onesc/main/menu_all/info-menu.sh" && chmod +x /usr/bin/info-menu
-wget -q -O /usr/bin/system-menu "https://raw.githubusercontent.com/rajakapur/onesc/main/menu_all/system-menu.sh" && chmod +x /usr/bin/system-menu
-wget -q -O /usr/bin/trial-menu "https://raw.githubusercontent.com/rajakapur/onesc/main/menu_all/trial-menu.sh" && chmod +x /usr/bin/trial-menu
+wget -q -O /usr/bin/xtls "https://raw.githubusercontent.com/izhanworks/izscrprem/main/xray/xtls.sh" && chmod +x /usr/bin/xtls && xtls && rm -f /usr/bin/xtls
+wget -q -O /usr/bin/setting-menu "https://raw.githubusercontent.com/izhanworks/izscrprem/main/menu_all/setting-menu.sh" && chmod +x /usr/bin/setting-menu
+wget -q -O /usr/bin/autokill-menu "https://raw.githubusercontent.com/izhanworks/izscrprem/main/menu_all/autokill-menu.sh" && chmod +x /usr/bin/autokill-menu
+wget -q -O /usr/bin/info-menu "https://raw.githubusercontent.com/izhanworks/izscrprem/main/menu_all/info-menu.sh" && chmod +x /usr/bin/info-menu
+wget -q -O /usr/bin/system-menu "https://raw.githubusercontent.com/izhanworks/izscrprem/main/menu_all/system-menu.sh" && chmod +x /usr/bin/system-menu
+wget -q -O /usr/bin/trial-menu "https://raw.githubusercontent.com/izhanworks/izscrprem/main/menu_all/trial-menu.sh" && chmod +x /usr/bin/trial-menu
 
 
-wget -q -O /usr/bin/kill-by-user "https://raw.githubusercontent.com/rajakapur/onesc/main/dll/kill-by-user.sh" && chmod +x /usr/bin/kill-by-user
-wget -q -O /usr/bin/importantfile "https://raw.githubusercontent.com/rajakapur/onesc/main/dll/toolkit.sh" && chmod +x /usr/bin/importantfile
-wget -q -O /usr/bin/status "https://raw.githubusercontent.com/rajakapur/onesc/main/dll/status.sh" && chmod +x /usr/bin/status
-wget -q -O /usr/bin/autoreboot "https://raw.githubusercontent.com/rajakapur/onesc/main/dll/autoreboot.sh" && chmod +x /usr/bin/autoreboot
-wget -q -O /usr/bin/limit-speed "https://raw.githubusercontent.com/rajakapur/onesc/main/dll/limit-speed.sh" && chmod +x /usr/bin/limit-speed
-wget -q -O /usr/bin/add-host "https://raw.githubusercontent.com/rajakapur/onesc/main/dll/add-host.sh" && chmod +x /usr/bin/add-host
-wget -q -O /usr/bin/akill-ws "https://raw.githubusercontent.com/rajakapur/onesc/main/dll/akill-ws.sh" && chmod +x /usr/bin/akill-ws
-wget -q -O /usr/bin/autokill-ws "https://raw.githubusercontent.com/rajakapur/onesc/main/dll/autokill-ws.sh" && chmod +x /usr/bin/autokill-ws
-wget -q -O /usr/bin/restart-service "https://raw.githubusercontent.com/rajakapur/onesc/main/dll/restart-service.sh" && chmod +x /usr/bin/restart-service
+wget -q -O /usr/bin/kill-by-user "https://raw.githubusercontent.com/izhanworks/izscrprem/main/dll/kill-by-user.sh" && chmod +x /usr/bin/kill-by-user
+wget -q -O /usr/bin/importantfile "https://raw.githubusercontent.com/izhanworks/izscrprem/main/dll/toolkit.sh" && chmod +x /usr/bin/importantfile
+wget -q -O /usr/bin/status "https://raw.githubusercontent.com/izhanworks/izscrprem/main/dll/status.sh" && chmod +x /usr/bin/status
+wget -q -O /usr/bin/autoreboot "https://raw.githubusercontent.com/izhanworks/izscrprem/main/dll/autoreboot.sh" && chmod +x /usr/bin/autoreboot
+wget -q -O /usr/bin/limit-speed "https://raw.githubusercontent.com/izhanworks/izscrprem/main/dll/limit-speed.sh" && chmod +x /usr/bin/limit-speed
+wget -q -O /usr/bin/add-host "https://raw.githubusercontent.com/izhanworks/izscrprem/main/dll/add-host.sh" && chmod +x /usr/bin/add-host
+wget -q -O /usr/bin/akill-ws "https://raw.githubusercontent.com/izhanworks/izscrprem/main/dll/akill-ws.sh" && chmod +x /usr/bin/akill-ws
+wget -q -O /usr/bin/autokill-ws "https://raw.githubusercontent.com/izhanworks/izscrprem/main/dll/autokill-ws.sh" && chmod +x /usr/bin/autokill-ws
+wget -q -O /usr/bin/restart-service "https://raw.githubusercontent.com/izhanworks/izscrprem/main/dll/restart-service.sh" && chmod +x /usr/bin/restart-service
  
-wget -q -O /usr/bin/installbot "https://raw.githubusercontent.com/rajakapur/onesc/main/bot_panel/installer.sh" && chmod +x /usr/bin/installbot
-wget -q -O /usr/bin/bbt "https://raw.githubusercontent.com/rajakapur/onesc/main/bot_panel/bbt.sh" && chmod +x /usr/bin/bbt
+wget -q -O /usr/bin/installbot "https://raw.githubusercontent.com/izhanworks/izscrprem/main/bot_panel/installer.sh" && chmod +x /usr/bin/installbot
+wget -q -O /usr/bin/bbt "https://raw.githubusercontent.com/izhanworks/izscrprem/main/bot_panel/bbt.sh" && chmod +x /usr/bin/bbt
 
 sleep 2
 echo -e "[ ${green}INFO${NC} ] Installing Successfully!!"
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Dont forget to reboot later"
 #=======[ end ] ======
-wget -q -O /usr/bin/xp https://raw.githubusercontent.com/rajakapur/onesc/main/dll/xp.sh && chmod +x /usr/bin/xp
-wget -q -O /usr/bin/info https://raw.githubusercontent.com/rajakapur/onesc/main/dll/info.sh && chmod +x /usr/bin/info
+wget -q -O /usr/bin/xp https://raw.githubusercontent.com/izhanworks/izscrprem/main/dll/xp.sh && chmod +x /usr/bin/xp
+wget -q -O /usr/bin/info https://raw.githubusercontent.com/izhanworks/izscrprem/main/dll/info.sh && chmod +x /usr/bin/info
 
-wget -q -O /usr/bin/.ascii-home "https://raw.githubusercontent.com/rajakapur/onesc/main/resources/ascii-home"
+wget -q -O /usr/bin/.ascii-home "https://raw.githubusercontent.com/izhanworks/izscrprem/main/resources/ascii-home"
 cat> /root/.profile << END
 # ~/.profile: executed by Bourne-compatible login shells.
 
@@ -254,7 +348,7 @@ if [ ! -f "/etc/log-create-user.log" ]; then
 echo "Log All Account " > /etc/log-create-user.log
 fi
 history -c
-serverV=$( curl -sS https://raw.githubusercontent.com/rajakapur/perizinan/main/versi  )
+serverV=$( curl -sS https://raw.githubusercontent.com/izhanworks/izvpnauthip/main/versi  )
 echo $serverV > /opt/.ver
 aureb=$(cat /home/re_otm)
 b=11
@@ -266,7 +360,7 @@ gg="AM"
 fi
 curl -sS ifconfig.me > /etc/myipvps
 echo " "
-echo "=====================-[ rajakapur Premium ]-===================="
+echo "=====================-[ SCVPS Premium ]-===================="
 echo ""
 echo "------------------------------------------------------------"
 echo ""
@@ -308,13 +402,13 @@ echo "   - SS-OBFS HTTP            : 3443-3543" | tee -a log-install.txt
 echo "   - Shadowsocks-R           : 1443-1543" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "   >>> Server Information & Other Features"  | tee -a log-install.txt
-echo "   - Timezone                : Asia/Jakarta (GMT +7)"  | tee -a log-install.txt
+echo "   - Timezone                : Asia/Kuala_Lumpur (GMT +8)"  | tee -a log-install.txt
 echo "   - Fail2Ban                : [ON]"  | tee -a log-install.txt
 echo "   - Dflate                  : [ON]"  | tee -a log-install.txt
 echo "   - IPtables                : [ON]"  | tee -a log-install.txt
 echo "   - Auto-Reboot             : [ON]"  | tee -a log-install.txt
 echo "   - IPv6                    : [OFF]"  | tee -a log-install.txt
-echo "   - Autoreboot On           : $aureb:00 $gg GMT +7" | tee -a log-install.txt
+echo "   - Autoreboot On           : $aureb:00 $gg GMT +8" | tee -a log-install.txt
 echo "   - Autobackup Data" | tee -a log-install.txt
 echo "   - AutoKill Multi Login User" | tee -a log-install.txt
 echo "   - Auto Delete Expired Account" | tee -a log-install.txt
