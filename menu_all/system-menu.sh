@@ -21,6 +21,7 @@ echo -e "
 [\033[0;32m05\033[0m] • Check Ram VPS
 [\033[0;32m06\033[0m] • Reboot VPS
 [\033[0;32m07\033[0m] • Speedtest VPS
+[\033[0;32m08\033[0m] • Update New Version Script
 
 [00] • Back to Main Menu \033[1;32m<\033[1;33m<\033[1;31m<\033[1;31m"
 echo ""
@@ -58,6 +59,12 @@ case "$x" in
    7 | 07)
    clear
    speedtest
+   read -n 1 -s -r -p "Press any key to back on menu"
+   system-menu
+   ;;
+     8 | 08)
+   clear
+   updatesc
    read -n 1 -s -r -p "Press any key to back on menu"
    system-menu
    ;;
