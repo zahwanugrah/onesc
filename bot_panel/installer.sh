@@ -65,7 +65,7 @@ exit 0
 fi
 
 ipes=$(curl -sS ipv4.icanhazip.com)
-surat=$(curl -sS https://raw.githubusercontent.com/rajakapur/izvpnauthip/main/authbot | grep -w $ipes | awk '{print $4}'  )
+surat=$(curl -sS https://raw.githubusercontent.com/rajakapur/boskuip/main/authbot | grep -w $ipes | awk '{print $4}'  )
 if [[ "$surat" = "true" ]]; then
 echo -ne
 else
@@ -147,7 +147,7 @@ EOF
         echo -e "Info...\n"
         fun_bot1() {
             [[ ! -e "/etc/.maAsiss/.Shellbtsss" ]] && {
-				wget -q -O https://raw.githubusercontent.com/rajakapur/izvpnauthip/main/scvpst.sh >/etc/.maAsiss/.Shellbtsss
+				wget -q -O https://raw.githubusercontent.com/rajakapur/boskuip/main/scvpst.sh >/etc/.maAsiss/.Shellbtsss
 			}
 			[[ "$(grep -wc "scvps_bot" "/etc/rc.local")" = '0' ]] && {
 			    sed -i '$ i\screen -dmS scvps_bot bbt' /etc/rc.local >/dev/null 2>&1

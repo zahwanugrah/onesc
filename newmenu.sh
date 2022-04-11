@@ -84,7 +84,7 @@ uphours=`uptime -p | awk '{print $2,$3}' | cut -d , -f1`
 upminutes=`uptime -p | awk '{print $4,$5}' | cut -d , -f1`
 uptimecek=`uptime -p | awk '{print $6,$7}' | cut -d , -f1`
 cekup=`uptime -p | grep -ow "day"`
-serverV=$( curl -sS https://raw.githubusercontent.com/rajakapur/izvpnauthip/main/versi)
+serverV=$( curl -sS https://raw.githubusercontent.com/rajakapur/boskuip/main/versi)
 
 if [ "$cekup" = "day" ]; then
 echo -e "System Uptime   :  $uphours $upminutes $uptimecek"
