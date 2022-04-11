@@ -4,7 +4,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/izhanworks/izvpnauthip/main/authipvps > /root/tmp
+    curl -sS https://raw.githubusercontent.com/rajakapur/boskuip/main/authipvps > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
@@ -22,7 +22,7 @@ BURIQ () {
 }
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/izhanworks/izvpnauthip/main/authipvps | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/rajakapur/boskuip/main/authipvps | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -39,7 +39,7 @@ fi
 
 PERMISSION () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/izhanworks/izvpnauthip/main/authipvps | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/rajakapur/boskuip/main/authipvps | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
@@ -52,7 +52,7 @@ red='\e[1;31m'
 green='\e[0;32m'
 yell='\e[1;33m'
 NC='\e[0m'
-curl -sS https://raw.githubusercontent.com/izhanworks/izscrprem/main/resources/ascii-home
+curl -sS https://raw.githubusercontent.com/rajakapur/onesc/main/resources/ascii-home
 echo "Shadowsocks-R"
 echo "Progress..."
 sleep 3
@@ -178,7 +178,7 @@ Service_SSR(){
 if [[ ${OS} = "centos" ]]; then
 echo "Not support centos"
 else
-wget -q --no-check-certificate https://raw.githubusercontent.com/izhanworks/izscrprem/main/core/ssr-core.sh -O /etc/init.d/ssrmu
+wget -q --no-check-certificate https://raw.githubusercontent.com/rajakapur/onesc/main/core/ssr-core.sh -O /etc/init.d/ssrmu
 chmod +x /etc/init.d/ssrmu
 update-rc.d -f ssrmu defaults > /dev/null 2>&1
 fi
@@ -199,7 +199,7 @@ if [[ ${OS} == "centos" ]]; then
 }
 Start_SSR(){
 	check_pid
-	wget -q -O /etc/init.d/ssrmu "https://raw.githubusercontent.com/izhanworks/izscrprem/main/core/ssr-core.sh"
+	wget -q -O /etc/init.d/ssrmu "https://raw.githubusercontent.com/rajakapur/onesc/main/core/ssr-core.sh"
 	systemctl daemon-reload > /dev/null 2>&1
 	systemctl restart ssrmu > /dev/null 2>&1
 }
@@ -238,10 +238,10 @@ Start_SSR
 Install_SSR
 systemctl restart ssrmu > /dev/null 2>&1
 #wget -q -O /usr/bin/ssr raw.githubusercontent.com/tikhonlavrev/VPN-For-Russia/main/shadowsocks/ssrmu.sh && chmod +x /usr/bin/ssr
-wget -q -O /usr/bin/add-ssr https://raw.githubusercontent.com/izhanworks/izscrprem/main/shadowsocks/add-ssr.sh && chmod +x /usr/bin/add-ssr
-wget -q -O /usr/bin/del-ssr https://raw.githubusercontent.com/izhanworks/izscrprem/main/shadowsocks/del-ssr.sh && chmod +x /usr/bin/del-ssr
-wget -q -O /usr/bin/renew-ssr https://raw.githubusercontent.com/izhanworks/izscrprem/main/shadowsocks/renew-ssr.sh && chmod +x /usr/bin/renew-ssr
-wget -q -O /usr/bin/trial-ssr https://raw.githubusercontent.com/izhanworks/izscrprem/main/shadowsocks/trial-ssr.sh && chmod +x /usr/bin/trial-ssr
+wget -q -O /usr/bin/add-ssr https://raw.githubusercontent.com/rajakapur/onesc/main/shadowsocks/add-ssr.sh && chmod +x /usr/bin/add-ssr
+wget -q -O /usr/bin/del-ssr https://raw.githubusercontent.com/rajakapur/onesc/main/shadowsocks/del-ssr.sh && chmod +x /usr/bin/del-ssr
+wget -q -O /usr/bin/renew-ssr https://raw.githubusercontent.com/rajakapur/onesc/main/shadowsocks/renew-ssr.sh && chmod +x /usr/bin/renew-ssr
+wget -q -O /usr/bin/trial-ssr https://raw.githubusercontent.com/rajakapur/onesc/main/shadowsocks/trial-ssr.sh && chmod +x /usr/bin/trial-ssr
 touch /usr/local/shadowsocksr/akun.conf
 
 sleep 1
