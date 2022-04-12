@@ -47,6 +47,21 @@ echo -e "${green}ANDA DH BOLEH GUNA SCRIPT SAYA${NC}"
 sleep 5
 else
 clear
+fi
+Blink='\e[5m'
+yell='\e[33m'
+lgreen='\e[92m'
+red='\e[1;31m'
+green='\e[0;32m'
+NC='\e[0m'
+MYIP=$(wget -qO- ipinfo.io/ip);
+#EDIT SETUP IZIN
+clear
+if [ -f "/etc/v2ray/domain" ]; then
+echo "Script Already Installed"
+exit 0
+fi
+clear
 echo ""
 rm -f setup.sh
 echo '                            ...                           '
