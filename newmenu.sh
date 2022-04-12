@@ -116,7 +116,7 @@ echo -e "
 if [[ $(cat /opt/.ver) = $serverV ]] > /dev/null 2>&1; then
 echo -ne
 else
-echo -e "[\033[1;32m999\033[0m] • \033[0;31mUpdate Available ! Go choice 999 to update\033[0m"
+echo -e "[\033[1;32m999\033[0m] • \033[0;31mUPDATE TERSEDIA!!TEKAN 999 UNTUK UPDATE\033[0m"
 echo ""
 fi
 echo -e "\033[1;37mPress [ Ctrl+C ] • To-Exit-Script\033[0m"
