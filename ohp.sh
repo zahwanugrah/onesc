@@ -22,10 +22,7 @@ Port_OHP='8087';
 
 #Installing ohp Server
 cd 
-wget -O /usr/local/bin/ohp "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/ohp"
+wget -O /usr/local/bin/ohp "https://raw.githubusercontent.com/rajakapur/onesc/main/ohp"
 chmod +x /usr/local/bin/ohp
 
 #Buat File OpenVPN TCP OHP

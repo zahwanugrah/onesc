@@ -1,11 +1,11 @@
 #!/bin/bash
 if [ "${EUID}" -ne 0 ]; then
-        echo "You need to run this script as root"
-        exit 1
+		echo "You need to run this script as root"
+		exit 1
 fi
 if [ "$(systemd-detect-virt)" == "openvz" ]; then
-        echo "OpenVZ is not supported"
-        exit 1
+		echo "OpenVZ is not supported"
+		exit 1
 fi
 Blink='\e[5m'
 yell='\e[33m'
@@ -31,12 +31,12 @@ echo -e "$yell $Blink     ((_)((_)(_))   _((_)(_)) ((_)\   )\  /(/(   /((_)/((_)
 echo -e "$yell $Blink     \ \ / / | _ \ | \| |/ __|| |(_) ((_)((_)_\ (_)) (_))      $NC" 
 echo -e "$yell $Blink      \ V /  |  _/ | .  |\__ \|   \ / _ \|  _ \)/ -_)/ -_)     $NC"
 echo -e "$yell $Blink     .-\_/---|_|---|_|\_||___/|_||_|\___/| .__/ \___|\___|---. $NC"
-echo -e "$yell $Blink     |           Premium Server Script   |_|  By Mrtricksiak | $NC"
+echo -e "$yell $Blink     |           Premium Server Script   |_|  By RARE        | $NC"
 echo -e "$yell $Blink     '-------------------------------------------------------' $NC"
 echo "" 
 echo -e "$green   ...........................................................$NC"
 echo ''
-echo -e "$green                   Telegram:$NC $red@Mrtricksiak             $NC"
+echo -e "$green                   Telegram:$NC $red@vpnshopee               $NC"
 echo -e "$green                 Scrript Version:$NC $red 1.0                $NC"
 echo ''
 echo ''

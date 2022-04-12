@@ -15,8 +15,5 @@ echo -e "$green   =============================================$NC"
 echo -e "$green                    $Blink UPDATE SCRIPT$NC               $NC"
 echo -e "$green   =============================================$NC"
 sleep 5
-wget https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/update.sh && chmod +x update.sh && screen -S update ./update.sh
+wget https://raw.githubusercontent.com/rajakapur/onesc/main/update.sh && chmod +x update.sh && screen -S update ./update.sh
 rm -f /root/update.sh

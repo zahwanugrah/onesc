@@ -488,54 +488,18 @@ systemctl enable xray@tcp_xtls.service
 systemctl start xray@tcp_xtls.service
 
 cd /usr/bin
-wget -O add-xtls "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/add-xtls.sh"
-wget -O del-xtls "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/del-xtls.sh"
-wget -O renew-xtls "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/renew-xtls.sh"
-wget -O cek-xtls "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/cek-xtls.sh"
-wget -O add-xws "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/add-xws.sh"
-wget -O del-xws "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/del-xws.sh"
-wget -O renew-xws "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/renew-xws.sh"
-wget -O cek-xws "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/cek-xws.sh"
-wget -O add-xvless "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/add-xvless.sh"
-wget -O del-xvless "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/del-xvless.sh"
-wget -O renew-xvless "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/renew-xvless.sh"
-wget -O cek-xvless "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/cek-xvless.sh"
+wget -O add-xtls "https://raw.githubusercontent.com/rajakapur/onesc/main/add-xtls.sh"
+wget -O del-xtls "https://raw.githubusercontent.com/rajakapur/onesc/main/del-xtls.sh"
+wget -O renew-xtls "https://raw.githubusercontent.com/rajakapur/onesc/main/renew-xtls.sh"
+wget -O cek-xtls "https://raw.githubusercontent.com/rajakapur/onesc/main/cek-xtls.sh"
+wget -O add-xws "https://raw.githubusercontent.com/rajakapur/onesc/main/add-xws.sh"
+wget -O del-xws "https://raw.githubusercontent.com/rajakapur/onesc/main/del-xws.sh"
+wget -O renew-xws "https://raw.githubusercontent.com/rajakapur/onesc/main/renew-xws.sh"
+wget -O cek-xws "https://raw.githubusercontent.com/rajakapur/onesc/main/cek-xws.sh"
+wget -O add-xvless "https://raw.githubusercontent.com/rajakapur/onesc/main/add-xvless.sh"
+wget -O del-xvless "https://raw.githubusercontent.com/rajakapur/onesc/main/del-xvless.sh"
+wget -O renew-xvless "https://raw.githubusercontent.com/rajakapur/onesc/main/renew-xvless.sh"
+wget -O cek-xvless "https://raw.githubusercontent.com/rajakapur/onesc/main/cek-xvless.sh"
 
 chmod +x add-xtls
 chmod +x del-xtls
@@ -551,10 +515,7 @@ chmod +x renew-xvless
 chmod +x cek-xvless
 
 cd
-wget -qO web.tar.gz "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/web.tar.gz"
+wget -qO web.tar.gz "https://raw.githubusercontent.com/rajakapur/onesc/main/web.tar.gz"
 tar xzf web.tar.gz -C /home/vps/public_html
 rm -f web.tar.gz
 

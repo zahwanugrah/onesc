@@ -16,10 +16,7 @@ date
 mkdir -p /etc/trojan/
 touch /etc/trojan/akun.conf
 # install v2ray
-wget https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/go.sh && chmod +x go.sh && ./go.sh
+wget https://raw.githubusercontent.com/rajakapur/onesc/main/go.sh && chmod +x go.sh && ./go.sh
 rm -f /root/go.sh
 bash -c "$(wget -O- https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)"
 mkdir /root/.acme.sh
@@ -494,54 +491,18 @@ systemctl enable trojan
 systemctl restart v2ray
 systemctl enable v2ray
 cd /usr/bin
-wget -O add-ws "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/add-ws.sh"
-wget -O add-vless "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/add-vless.sh"
-wget -O cek-ws "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/cek-ws.sh"
-wget -O cek-vless "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/cek-vless.sh"
-wget -O del-ws "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/del-ws.sh"
-wget -O del-vless "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/del-vless.sh"
-wget -O renew-ws "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/renew-ws.sh"
-wget -O renew-vless "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/renew-vless.sh"
-wget -O add-tr "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/add-tr.sh"
-wget -O del-tr "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/del-tr.sh"
-wget -O cek-tr "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/cek-tr.sh"
-wget -O renew-tr "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/renew-tr.sh"
+wget -O add-ws "https://raw.githubusercontent.com/rajakapur/onesc/main/add-ws.sh"
+wget -O add-vless "https://raw.githubusercontent.com/rajakapur/onesc/main/add-vless.sh"
+wget -O cek-ws "https://raw.githubusercontent.com/rajakapur/onesc/main/cek-ws.sh"
+wget -O cek-vless "https://raw.githubusercontent.com/rajakapur/onesc/main/cek-vless.sh"
+wget -O del-ws "https://raw.githubusercontent.com/rajakapur/onesc/main/del-ws.sh"
+wget -O del-vless "https://raw.githubusercontent.com/rajakapur/onesc/main/del-vless.sh"
+wget -O renew-ws "https://raw.githubusercontent.com/rajakapur/onesc/main/renew-ws.sh"
+wget -O renew-vless "https://raw.githubusercontent.com/rajakapur/onesc/main/renew-vless.sh"
+wget -O add-tr "https://raw.githubusercontent.com/rajakapur/onesc/main/add-tr.sh"
+wget -O del-tr "https://raw.githubusercontent.com/rajakapur/onesc/main/del-tr.sh"
+wget -O cek-tr "https://raw.githubusercontent.com/rajakapur/onesc/main/cek-tr.sh"
+wget -O renew-tr "https://raw.githubusercontent.com/rajakapur/onesc/main/renew-tr.sh"
 chmod +x add-ws
 chmod +x add-vless
 chmod +x del-ws

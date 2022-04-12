@@ -89,22 +89,10 @@ WG_RUNNING=$?
 
 # Tambahan
 cd /usr/bin
-wget -O add-wg "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/add-wg.sh"
-wget -O del-wg "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/del-wg.sh"
-wget -O cek-wg "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/cek-wg.sh"
-wget -O renew-wg "https://raw.githubusercontent.com/rajakapur
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0/testscript/main/renew-wg.sh"
+wget -O add-wg "https://raw.githubusercontent.com/rajakapur/onesc/main/add-wg.sh"
+wget -O del-wg "https://raw.githubusercontent.com/rajakapur/onesc/main/del-wg.sh"
+wget -O cek-wg "https://raw.githubusercontent.com/rajakapur/onesc/main/cek-wg.sh"
+wget -O renew-wg "https://raw.githubusercontent.com/rajakapur/onesc/main/renew-wg.sh"
 chmod +x add-wg
 chmod +x del-wg
 chmod +x cek-wg

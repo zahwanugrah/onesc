@@ -1,4 +1,4 @@
-IZIN=$( curl https://raw.githubusercontent.com/rajakapur/terimaip/main/authipvps  | grep $MYIP )
+IZIN=$( curl https://raw.githubusercontent.com/rajakapur/terimaip/main/authipvps | grep $MYIP )
 if [ $MYIP = $IZIN ]; then
 echo -e "${green}Permission Accepted...${NC}"
 else
