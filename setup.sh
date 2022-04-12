@@ -54,7 +54,7 @@ echo '        BOSS DAFTAR IP DULU JANGAN MAIN INSTALL SAJA      '
 echo '                            ...                           '
 echo '             PM SAYA DI TELEGRAM UNTUK DAFTAR IP          '
 echo '                  Telegram t.me/MrTricksiak               '
-sleep 20
+sleep 15
 exit 0
 fi
 clear
