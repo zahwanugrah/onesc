@@ -77,6 +77,12 @@ chck_b(){
 }
 chck_b
 clear
+#paste ini di menu anda. Terpulang kepada tempat yg anda mahu. Sebaiknya di atas info detail vps anda.
+banner=$(cat /var/lib/banner-name/banner)
+echo ""
+figlet -f standard "$banner" | lolcat
+echo "_______________"
+
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\E[40;1;37m|              • SCRIPT VPS MENU •               |\E[0m"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"

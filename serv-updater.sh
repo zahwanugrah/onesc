@@ -254,7 +254,7 @@ Last-updates : $LLatest
 
 Save_And_Exit () {
     cd /root/user-backup
-    git config --global user.email "izhanjafry96@gmail.com" &> /dev/null
+    git config --global user.email "mukhriza291@gmail.com" &> /dev/null
     git config --global user.name "rajakapur" &> /dev/null
     rm -rf .git &> /dev/null
     git init &> /dev/null
