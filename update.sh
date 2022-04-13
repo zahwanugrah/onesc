@@ -29,17 +29,17 @@ rm -rf m-system
 
 # download menu
 cd /usr/bin
-wget -O menu "https://raw.githubusercontent.com/nikstore/scnew/main/update/menu.sh"
-wget -O m-sshovpn "https://raw.githubusercontent.com/nikstore/scnew/main/update/m-sshovpn.sh"
-wget -O m-wg "https://raw.githubusercontent.com/nikstore/scnew/main/update/m-wg.sh"
-wget -O m-ssr "https://raw.githubusercontent.com/nikstore/scnew/main/update/m-ssr.sh"
-wget -O v2ray-vmess "https://raw.githubusercontent.com/nikstore/scnew/main/update/v2ray-vmess.sh"
-wget -O v2ray-vless "https://raw.githubusercontent.com/nikstore/scnew/main/update/v2ray-vless.sh"
-wget -O xray-vmess "https://raw.githubusercontent.com/nikstore/scnew/main/update/xray-vmess.sh"
-wget -O xray-vless "https://raw.githubusercontent.com/nikstore/scnew/main/update/xray-vless.sh"
-wget -O xray-xtls "https://raw.githubusercontent.com/nikstore/scnew/main/update/xray-xtls.sh"
-wget -O m-trojan "https://raw.githubusercontent.com/nikstore/scnew/main/update/m-trojan.sh"
-wget -O m-system "https://raw.githubusercontent.com/nikstore/scnew/main/update/m-system.sh"
+wget -O menu "https://raw.githubusercontent.com/rajakapur/onesc/main/menu.sh"
+wget -O m-sshovpn "https://raw.githubusercontent.com/rajakapur/onesc/main/m-sshovpn.sh"
+wget -O m-wg "https://raw.githubusercontent.com/rajakapur/onesc/main/m-wg.sh"
+wget -O m-ssr "https://raw.githubusercontent.com/rajakapur/onesc/main/m-ssr.sh"
+wget -O v2ray-vmess "https://raw.githubusercontent.com/rajakapur/onesc/main/v2ray-vmess.sh"
+wget -O v2ray-vless "https://raw.githubusercontent.com/rajakapur/onesc/maine/v2ray-vless.sh"
+wget -O xray-vmess "https://raw.githubusercontent.com/rajakapur/onesc/main/xray-vmess.sh"
+wget -O xray-vless "https://raw.githubusercontent.com/rajakapur/onesc/main/xray-vless.sh"
+wget -O xray-xtls "https://raw.githubusercontent.com/rajakapur/onesc/main/xray-xtls.sh"
+wget -O m-trojan "https://raw.githubusercontent.com/rajakapur/onesc/main/m-trojan.sh"
+wget -O m-system "https://raw.githubusercontent.com/rajakapur/onesc/main/m-system.sh"
 
 
 chmod +x menu
