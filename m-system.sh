@@ -68,7 +68,7 @@ case $opt in
 16) clear ; user-limit ; exit ;;
 17) clear ; clear-log ; exit ;;
 18) clear ; restart ; exit ;;
-19) clear ; nano /etc/issue.net ; exit ;; #ssh-vpn banner.conf
+19) clear ; banner ; exit ;;
 20) clear ; bw ; exit ;;
 21) clear ; resett ; exit ;;
 22) clear ; update ; exit ;;
