@@ -77,18 +77,11 @@ IPVPS=$(curl -s ipinfo.io/ip )
 	uram=$( free -m | awk 'NR==2 {print $3}' )
 	fram=$( free -m | awk 'NR==2 {print $4}' )
 	swap=$( free -m | awk 'NR==4 {print $2}' )
-echo ""  
-echo -e "$green                                                            $NC"
-echo -e "$PURPLE            (        )  (                                    $NC"
-echo -e "$PURPLE            )\ )  ( /(  )\ )    )                            $NC"
-echo -e "$PURPLE    (   (  (()/(  )\())(()/( ( /(                (    (      $NC"
-echo -e "$PURPLE    )\  )\  /(_))((_)\  /(_)))\())  (      )    ))\  ))\     $NC"
-echo -e "$PURPLE   ((_)((_)(_))   _((_)(_)) ((_)\   )\  /(/(   /((_)/((_)    $NC"
-echo -e "$PURPLE   \ \ / / | _ \ | \| |/ __|| |(_) ((_)((_)_\ (_)) (_))      $NC" 
-echo -e "$PURPLE    \ V /  |  _/ | .  |\__ \|   \ / _ \|  _ \)/ -_)/ -_)     $NC"
-echo -e "$PURPLE   .-\_/---|_|---|_|\_||___/|_||_|\___/| .__/ \___|\___|---. $NC"
-echo -e "$PURPLE   |           Premium Server Script   |_|  By RARE        | $NC"
-echo -e "$PURPLE   '-------------------------------------------------------' $NC"
+#paste ini di menu anda. Terpulang kepada tempat yg anda mahu. Sebaiknya di atas info detail vps anda.
+banner=$(cat /var/lib/banner-name/banner)
+echo ""
+figlet -f standard "$banner" | lolcat
+echo "_______________"
 echo -e "                $green $Bold System Information $NC"
 	echo -e "   $green VPS Type             :$NC  $typevps"
 	echo -e "   $green CPU Model            :$NC $cname"
