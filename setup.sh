@@ -1,52 +1,62 @@
 #!/bin/bash
+echo ''
+clear
+echo ''                                                               '''''''
+echo '███████╗██╗██████╗ ████████╗██████╗ ██╗ ██████╗██╗  ██╗███████╗██████╗ '
+echo '██╔════╝██║██╔══██╗╚══██╔══╝██╔══██╗██║██╔════╝██║ ██╔╝██╔════╝██╔══██╗'
+echo '███████╗██║██████╔╝   ██║   ██████╔╝██║██║     █████╔╝ █████╗  ██████╔╝'
+echo '╚════██║██║██╔══██╗   ██║   ██╔══██╗██║██║     ██╔═██╗ ██╔══╝  ██╔══██╗'
+echo '███████║██║██║  ██║   ██║   ██║  ██║██║╚██████╗██║  ██╗███████╗██║  ██║'
+echo '╚══════╝╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝'
+echo ''                                                                     '
+echo '                  AUTOSCRIPT PREMIUM SCRIPT                 '
+echo ''
+echo ' .......................................................... '
+echo '                       Build in 2022                        '
+echo ''
+echo '                   kalau ada apa2 masalah                   '
+echo '                  Contact Saya Di Telegram                  '
+echo ''
+echo ''
+echo '                         Telegram                           '
+echo '              Telegram Channel t.me/Mrtricksiak             '
+echo ''
+echo ''
+echo ''
+echo '                       Sabar Boss                           '
+echo '                     Tunggu 5 Saat                          '
+echo ' .......................................................... '
+sleep 5
+clear
 if [ "${EUID}" -ne 0 ]; then
-		echo "You need to run this script as root"
-		exit 1
+        echo "You need to run this script as root"
+        exit 1
 fi
 if [ "$(systemd-detect-virt)" == "openvz" ]; then
-		echo "OpenVZ is not supported"
-		exit 1
+        echo "OpenVZ is not supported"
+        exit 1
 fi
-Blink='\e[5m'
-yell='\e[33m'
-lgreen='\e[92m'
 red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- ipinfo.io/ip);
-#EDIT SETUP IZIN
+IZIN=$( curl https://raw.githubusercontent.com/rajakapur/terimaip/main/authipvps | grep $MYIP )
+if [ $MYIP = $IZIN ]; then
 clear
-if [ -f "/etc/v2ray/domain" ]; then
-echo "Script Already Installed"
+echo -e "${green}ANDA DH BOLEH GUNA SCRIPT SAYA${NC}"
+sleep 5
+else
+clear
+echo ""
+rm -f setup.sh
+echo '                            ...                           '
+echo '        BOSS DAFTAR IP DULU JANGAN MAIN INSTALL SAJA      '
+echo '                            ...                           '
+echo '             PM SAYA DI TELEGRAM UNTUK DAFTAR IP          '
+echo '                  Telegram t.me/MrTricksiak               '
+sleep 20
 exit 0
 fi
-clear
-echo ""  
-echo -e "$green                                                             $NC"
-echo -e "$yell $Blink              (        )  (                                    $NC"
-echo -e "$yell $Blink              )\ )  ( /(  )\ )    )                            $NC"
-echo -e "$yell $Blink      (   (  (()/(  )\())(()/( ( /(                (    (      $NC"
-echo -e "$yell $Blink      )\  )\  /(_))((_)\  /(_)))\())  (      )    ))\  ))\     $NC"
-echo -e "$yell $Blink     ((_)((_)(_))   _((_)(_)) ((_)\   )\  /(/(   /((_)/((_)    $NC"
-echo -e "$yell $Blink     \ \ / / | _ \ | \| |/ __|| |(_) ((_)((_)_\ (_)) (_))      $NC" 
-echo -e "$yell $Blink      \ V /  |  _/ | .  |\__ \|   \ / _ \|  _ \)/ -_)/ -_)     $NC"
-echo -e "$yell $Blink     .-\_/---|_|---|_|\_||___/|_||_|\___/| .__/ \___|\___|---. $NC"
-echo -e "$yell $Blink     |           Premium Server Script   |_|  By RARE        | $NC"
-echo -e "$yell $Blink     '-------------------------------------------------------' $NC"
-echo "" 
-echo -e "$green   ...........................................................$NC"
-echo ''
-echo -e "$green                   Telegram:$NC $red@vpnshopee               $NC"
-echo -e "$green                 Scrript Version:$NC $red 1.0                $NC"
-echo ''
-echo ''
-echo ''
-echo ''
-echo ''
-echo -e "$green                  Proses akan mula dalam 5 Saat!              $NC"
-echo -e "$green   ...........................................................$NC"
-sleep 5
-clear
 echo -e "$green   =============================================$NC"
 echo -e "$green    Sila Masukkan DOMAIN, Jika TIADA KLIK Enter $NC"
 echo -e "$green   =============================================$NC"
