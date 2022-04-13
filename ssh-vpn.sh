@@ -1,8 +1,33 @@
 #!/bin/bash
-# By Horasss
-#
-# ==================================================
+if [ "${EUID}" -ne 0 ]; then
+  echo "You need to run this script as root"
+  exit 1
+fi
+if [ "$(systemd-detect-virt)" == "openvz" ]; then
+  echo "OpenVZ is not supported"
+  exit 1
+fi
+apt -y install python
+apt -y install tmux
+apt -y install ruby
+gem install lolcat
+sudo snap install lolcat -y
+sudo apt-get install figlet -y
 
+# install
+apt install neofetch
+apt-get --reinstall --fix-missing install -y linux-headers-cloud-amd64 bzip2 gzip coreutils wget screen rsyslog iftop htop net-tools zip unzip wget net-tools curl nano sed screen gnupg gnupg1 bc apt-transport-https build-essential dirmngr libxml-parser-perl neofetch git lsof
+echo "clear" >> .profile
+echo "neofetch" >> .profile
+
+cd /usr/bin
+wget -O menu "https://raw.githubusercontent.com/rajakapur/onesc/main/menu.sh"
+wget -O banner "https://raw.githubusercontent.com/rajakapur/onesc/main/banner.sh"
+chmod +x menu
+chmod +x banner
+mkdir /var/lib/banner-name;
+echo -e "Premium" >> /var/lib/banner-name/banner
+clear
 # initializing var
 export DEBIAN_FRONTEND=noninteractive
 MYIP=$(wget -qO- ipinfo.io/ip);
@@ -82,9 +107,9 @@ sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 apt-get --reinstall --fix-missing install -y bzip2 gzip coreutils wget screen rsyslog iftop htop net-tools zip unzip wget net-tools curl nano sed screen gnupg gnupg1 bc apt-transport-https build-essential dirmngr libxml-parser-perl neofetch git lsof
 echo "clear" >> .profile
 echo "neofetch --ascii_distro SliTaz" >> .profile
-echo "echo -e '\e[35m  Script Premium VPNshopee By \e[32mRARE \e[0m'" >> .profile
+echo "echo -e '\e[35m  Script Premium MR.TRICK By \e[32mMR \e[0m'" >> .profile
 echo "echo -e '\e[35m Sila Type: info, untuk melihat info \e[0m'" >> .profile
-echo "echo -e '\e[35m    Telegram:\e[0m \e[32m@vpnshopee \e[0m'" >> .profile
+echo "echo -e '\e[35m    Telegram:\e[0m \e[32m@MrTricksiak \e[0m'" >> .profile
 echo "echo ''" >> .profile
 echo "echo -e '\e[35m  Type\e[5m \e[32mmenu\e[0m \e[35mUntuk Melihat Menu VPS anda \e[0m'" >> .profile
 echo "echo ''" >> .profile
