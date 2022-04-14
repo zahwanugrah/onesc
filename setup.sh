@@ -70,7 +70,7 @@ echo "IP=$host" >> /var/lib/premium-script/ipvps.conf
 echo "$host" >> /root/domain
 echo "$host" >> /etc/v2ray/domain
 echo "V1.0" >> /home/version
-echo "@vpnshopee" >> /home/contact
+echo "@MrTricksiak" >> /home/contact
 clear
 echo -e "$green   =============================================$NC"
 echo -e "$green               Sila Tunggu sebentar             $NC"

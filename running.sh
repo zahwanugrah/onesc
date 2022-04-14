@@ -347,27 +347,48 @@ echo -e "   Date        : $harini"
 echo -e "   Time        : $jam ( WIB )"
 echo -e "   $GREEN-------------------------------------------------------------------------------$NC"
 echo -e "  $PURPLE System Status Information :$NC"
+
+echo -e "  $PURPLE OVPN RUNNING STATUS :$NC"
 echo -e "   SSH / Tun         : $status_ssh"
 echo -e "   OpenVPN           : $status_openvpn"
 echo -e "   OHP               : $status_OHPovpn"
 echo -e "   Dropbear          : $status_beruangjatuh"
 echo -e "   Stunnel           : $status_stunnel"
 echo -e "   Squid             : $status_squid"
-echo -e "   Fail2Ban          : $status_fail2ban"
-echo -e "   Crons             : $status_cron"
-echo -e "   Vnstat            : $status_vnstat"
+
+
+
+echo -e "  $PURPLE XRAY RUNNING STATUS :$NC"
 echo -e "   XRAY TLS/XTLS     : $status_xtls_xray"
 echo -e "   XRAY Vmess TLS    : $status_tls_xray"
 echo -e "   XRAY Vmess HTTP   : $status_nontls_xray"
 echo -e "   XRAY Vless TLS    : $status_tls_xvless"
 echo -e "   XRAY Vless HTTP   : $status_nontls_xvless"
+
+
+echo -e "  $PURPLE V2RAY RUNNING STATUS :$NC"
 echo -e "   V2Ray Vmess TLS   : $status_tls_v2ray"
 echo -e "   V2Ray Vmess HTTP  : $status_nontls_v2ray"
 echo -e "   V2ray Vless TLS   : $status_tls_vless"
 echo -e "   V2ray Vless HTTP  : $status_nontls_vless"
+
+
+echo -e "  $PURPLE SSR & SS RUNNING STATUS :$NC"
 echo -e "   SSR               : $status_ssr"
 echo -e "   Shadowsocks       : $status_sodosok"
+
+
+echo -e "  $PURPLE TROJAN RUNNING STATUS :$NC"
 echo -e "   Trojan            : $status_virus_trojan"
+
+
+echo -e "  $PURPLE WIREGUARD RUNNING STATUS :$NC"
 echo -e "   Wireguard         : $status_wg"
+
+
+echo -e "  $PURPLE OTHER RUNNING STATUS :$NC"
+echo -e "   Fail2Ban          : $status_fail2ban"
+echo -e "   Crons             : $status_cron"
+echo -e "   Vnstat            : $status_vnstat"
 echo -e "   $GREEN-------------------------------------------------------------------------------$NC"
 echo ""
