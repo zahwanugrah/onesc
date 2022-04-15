@@ -1,11 +1,64 @@
 #!/bin/bash
+echo ''
+clear
+echo ''    
+echo -e "$green                                                             $NC"                                                           
+echo -e "$yell $Blink  ███████╗██╗██████╗ ████████╗██████╗ ██╗ ██████╗██╗  ██╗███████╗██████╗ $NC"
+echo -e "$yell $Blink  ██╔════╝██║██╔══██╗╚══██╔══╝██╔══██╗██║██╔════╝██║ ██╔╝██╔════╝██╔══██╗$NC"
+echo -e "$yell $Blink  ███████╗██║██████╔╝   ██║   ██████╔╝██║██║     █████╔╝ █████╗  ██████╔╝$NC"
+echo -e "$yell $Blink  ╚════██║██║██╔══██╗   ██║   ██╔══██╗██║██║     ██╔═██╗ ██╔══╝  ██╔══██╗$NC"
+echo -e "$yell $Blink  ███████║██║██║  ██║   ██║   ██║  ██║██║╚██████╗██║  ██╗███████╗██║  ██║$NC"
+echo -e "$yell $Blink  ╚══════╝╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝$NC"
+echo ''  
+echo -e "$green   ...........................................................$NC"
+echo ''                                                                   
+echo '                  AUTOSCRIPT PREMIUM SCRIPT                 '
+echo ''
+echo ' .......................................................... '
+echo '                       Build in 2022                        '
+echo ''
+echo '                   kalau ada apa2 masalah                   '
+echo '                  Contact Saya Di Telegram                  '
+echo ''
+echo ''
+echo '                         Telegram                           '
+echo '              Telegram Channel t.me/Mrtricksiak             '
+echo ''
+echo ''
+echo ''
+echo '                       Sabar Boss                           '
+echo '                     Tunggu 5 Saat                          '
+echo ' .......................................................... '
+sleep 5
+clear
 if [ "${EUID}" -ne 0 ]; then
-		echo "You need to run this script as root"
-		exit 1
+        echo "You need to run this script as root"
+        exit 1
 fi
 if [ "$(systemd-detect-virt)" == "openvz" ]; then
-		echo "OpenVZ is not supported"
-		exit 1
+        echo "OpenVZ is not supported"
+        exit 1
+fi
+red='\e[1;31m'
+green='\e[0;32m'
+NC='\e[0m'
+MYIP=$(wget -qO- ipinfo.io/ip);
+IZIN=$( curl https://raw.githubusercontent.com/rajakapur/terimaip/main/authipvps | grep $MYIP )
+if [ $MYIP = $IZIN ]; then
+clear
+echo -e "${green}ANDA DH BOLEH GUNA SCRIPT SAYA${NC}"
+sleep 5
+else
+clear
+echo ""
+rm -f setup.sh
+echo '                            ...                           '
+echo '        BOSS DAFTAR IP DULU JANGAN MAIN INSTALL SAJA      '
+echo '                            ...                           '
+echo '             PM SAYA DI TELEGRAM UNTUK DAFTAR IP          '
+echo '                  Telegram t.me/MrTricksiak               '
+sleep 20
+exit 0
 fi
 # ==========================================
 # Color
@@ -19,25 +72,25 @@ CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
 # Link Hosting Kalian Untuk Ssh Vpn
-akbarvpn="raw.githubusercontent.com/fisabiliyusri/Mantap/main/ssh"
+akbarvpn="raw.githubusercontent.com/rajakapur/onesc/main/ssh"
 # Link Hosting Kalian Untuk Sstp
-akbarvpnn="raw.githubusercontent.com/fisabiliyusri/Mantap/main/sstp"
+akbarvpnn="raw.githubusercontent.com/rajakapur/onesc/main/sstp"
 # Link Hosting Kalian Untuk Ssr
-akbarvpnnn="raw.githubusercontent.com/fisabiliyusri/Mantap/main/ssr"
+akbarvpnnn="raw.githubusercontent.com/rajakapur/onesc/main/ssr"
 # Link Hosting Kalian Untuk Shadowsocks
-akbarvpnnnn="raw.githubusercontent.com/fisabiliyusri/Mantap/main/shadowsocks"
+akbarvpnnnn="raw.githubusercontent.com/rajakapur/onesc/main/shadowsocks"
 # Link Hosting Kalian Untuk Wireguard
-akbarvpnnnnn="raw.githubusercontent.com/fisabiliyusri/Mantap/main/wireguard"
+akbarvpnnnnn="raw.githubusercontent.com/rajakapur/onesc/main/wireguard"
 # Link Hosting Kalian Untuk Xray
-akbarvpnnnnnn="raw.githubusercontent.com/fisabiliyusri/Mantap/main/xray"
+akbarvpnnnnnn="raw.githubusercontent.com/rajakapur/onesc/main/xray"
 # Link Hosting Kalian Untuk Ipsec
-akbarvpnnnnnnn="raw.githubusercontent.com/fisabiliyusri/Mantap/main/ipsec"
+akbarvpnnnnnnn="raw.githubusercontent.com/rajakapur/onesc/main/ipsec"
 # Link Hosting Kalian Untuk Backup
-akbarvpnnnnnnnn="raw.githubusercontent.com/fisabiliyusri/Mantap/main/backup"
+akbarvpnnnnnnnn="raw.githubusercontent.com/rajakapur/onesc/main/backup"
 # Link Hosting Kalian Untuk Websocket
-akbarvpnnnnnnnnn="raw.githubusercontent.com/fisabiliyusri/Mantap/main/websocket"
+akbarvpnnnnnnnnn="raw.githubusercontent.com/rajakapur/onesc/main/websocket"
 # Link Hosting Kalian Untuk Ohp
-akbarvpnnnnnnnnnn="raw.githubusercontent.com/fisabiliyusri/Mantap/main/ohp"
+akbarvpnnnnnnnnnn="raw.githubusercontent.com/rajakapur/onesc/main/ohp"
 
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
@@ -71,12 +124,12 @@ wget https://${akbarvpnnnnnnnnn}/edu.sh && chmod +x edu.sh && ./edu.sh
 # Ohp Server
 wget https://${akbarvpnnnnnnnnnn}/ohp.sh && chmod +x ohp.sh && ./ohp.sh
 # Install SlowDNS
-wget https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/SLDNS/install-sldns && chmod +x install-sldns && ./install-sldns
+wget https://raw.githubusercontent.com/rajakapur/onesc/main/SLDNS/install-sldns && chmod +x install-sldns && ./install-sldns
 # Informasi IP Saya dan Semua Port TCP UDP
-# wget https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/ipsaya.sh && chmod +x ipsaya.sh
+# wget https://raw.githubusercontent.com/rajakapur/onesc/main/ipsaya.sh && chmod +x ipsaya.sh
 #
 # install xray grpc
-wget https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/grpc/sl-grpc.sh && chmod +x sl-grpc.sh && screen -S sl-grpc ./sl-grpc.sh
+wget https://raw.githubusercontent.com/rajakapur/onesc/main/grpc/sl-grpc.sh && chmod +x sl-grpc.sh && screen -S sl-grpc ./sl-grpc.sh
 #
 
 rm -f /root/ssh-vpn.sh
