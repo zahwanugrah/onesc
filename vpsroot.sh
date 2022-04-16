@@ -1,5 +1,5 @@
 #!/bin/bash
-# Mod By SL
+# MR.TRICK
 wget -qO- -O /etc/ssh/sshd_config https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/sshd_config;
 systemctl restart sshd;
 clear;
