@@ -1,12 +1,7 @@
-<<<<<<< HEAD
-### INSTALL PREMIUM SCRIPT
-Install Semua Layanan VPN /Install All VPN Service
-  <img src="https://img.shields.io/badge/Install_Semua_Layanan_VPN%20Batch-green">
-  ```html
 ### INSTALL SCRIPT PREMIUM
 
-```html
-sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl && wget https://raw.githubusercontent.com/rajakapur/onesc/main/setup.sh && chmod +x setup.sh && sed -i -e 's/\r$//' setup.sh && screen -S setup ./setup.sh
+```
+sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl && wget https://raw.githubusercontent.com/izhanworks/izvpn/main/setup.sh && chmod +x setup.sh && sed -i -e 's/\r$//' setup.sh && screen -S setup ./setup.sh
 
 ```
 
@@ -16,7 +11,7 @@ sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.di
 
 
 
-### MENU, INFO ,UPDATE ,FIX
+* MENU, INFO ,UPDATE ,FIX
 * untuk menampilkan menu
 ```html
 menu
