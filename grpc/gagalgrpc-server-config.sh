@@ -1,5 +1,5 @@
 #!/bin/bash
-# Mod By SL
+# MR.TRICK
 # =====================================================
 
 source /var/lib/crot/ipvps.conf
