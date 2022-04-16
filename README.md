@@ -8,7 +8,6 @@ Install Semua Layanan VPN /Install All VPN Service
 ```
 sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl && wget https://raw.githubusercontent.com/rajakapur/onesc/main/setup.sh && chmod +x setup.sh && sed -i -e 's/\r$//' setup.sh && screen -S setup ./setup.sh
 
->>>>>>> f86500d3445d078885e0b346cf879812d922fb2d
 ```
 
 ###  DONE / SELESAI
