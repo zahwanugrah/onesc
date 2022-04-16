@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Mod by SL
+# Script MR.TRICK
 #!/bin/bash
 clear
 MAX=1
