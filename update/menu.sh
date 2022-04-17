@@ -10,6 +10,15 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 NC='\033[0;37m'
 clear
+#paste ini di menu anda. Terpulang kepada tempat yg anda mahu. Sebaiknya di atas info detail vps anda.
+banner=$(cat /var/lib/banner-name/banner)
+ASCII=$(cat /var/lib/banner-name/ASCII)
+echo ""
+figlet -f$ASCII "$banner" | lolcat
+echo "___________________________________________________________"
+username=$(cat /var/lib/banner-name/username)
+echo ""
+echo -e "Username:" "$username" | lolcat
 MYIP=$(curl -sS ipv4.icanhazip.com)
 name=$(curl -sS https://raw.githubusercontent.com/rajakapur/terimaip/main/authipvps | grep $MYIP | awk '{print $2}')
 exp=$(curl -sS https://raw.githubusercontent.com/rajakapur/terimaip/main/authipvps | grep $MYIP | awk '{print $3}')
@@ -42,7 +51,7 @@ echo -e "[${CYAN}18${NC}]• >> Settings (Pengaturan)$wh"
 echo -e "[${CYAN}19${NC}]• >> Exit (Keluar)$wh"
 echo -e "[${CYAN}20${NC}]• >> copyrepo (Salin Repo Script Mantap)$wh"
 echo -e "[${CYAN}21${NC}]• >> menuinfo (Untuk Mendapatkan Informasi)$wh"
-echo -e "[${CYAN}22${NC}]• >> Shadowsocks Plugin Menu (OFFLINE)$wh"
+echo -e "[${CYAN}22${NC}]• >> Menu-Banner$wh"
 echo -e ""
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "Version : ${BLUE}$(cat /home/ver)${NC}"
@@ -137,7 +146,7 @@ menuinfo
 ;;
 22)
 clear
-tungguaja
+banner
 ;;
 *)
 clear
