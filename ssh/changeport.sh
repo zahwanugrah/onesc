@@ -25,11 +25,11 @@ echo -e "[6]. Change Port SSTP"
 echo -e "[7]. Change Port SSH WS HTTP"
 echo -e "[8]. Change Port SSH WS TLS / SSL"
 echo -e "[9]. Change Port Grpc Vmess/Vless"
-echo -e "[9]. Exit"
+echo -e "[10]. Exit"
 echo -e ""
 echo -e "======================================"
 echo -e ""
-read -p "Select From Options [ 1-7 ] : " port
+read -p "Select From Options [ 1-10 ] : " port
 echo -e ""
 case $port in
 1)
