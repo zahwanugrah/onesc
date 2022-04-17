@@ -43,6 +43,7 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 	done
 uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "Expired (Days) : " masaaktif
+read -p "SNI (BUG)     : " sni
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#xray-vmess-tls$/a\### '"$user $exp"'\
@@ -60,7 +61,7 @@ cat>/etc/xray/vmess-$user-tls.json<<EOF
       "net": "ws",
       "path": "/vmess/",
       "type": "none",
-      "host": "",
+      "host": "${sni}",
       "tls": "tls"
 }
 EOF
@@ -75,7 +76,7 @@ cat>/etc/xray/vmess-$user-nontls.json<<EOF
       "net": "ws",
       "path": "/vmess/",
       "type": "none",
-      "host": "",
+      "host": "${sni}",
       "tls": "none"
 }
 EOF

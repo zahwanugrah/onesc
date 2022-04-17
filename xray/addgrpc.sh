@@ -25,6 +25,7 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 	done
 uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "Expired (Days) : " masaaktif
+read -p "SNI (BUG)     : " sni
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vmessgrpc$/a\### '"$user $exp"'\
@@ -48,7 +49,7 @@ cat > /etc/xray/$user-tls.json << EOF
 EOF
 vmess_base641=$( base64 -w 0 <<< $vmess_json1)
 vmesslink1="vmess://$(base64 -w 0 /etc/xray/$user-tls.json)"
-vlesslink1="vless://${uuid}@${domain}:${vl}?mode=gun&security=tls&encryption=none&type=grpc&serviceName=GunService&sni=${domain}#$user"
+vlesslink1="vless://${uuid}@${domain}:${vl}?mode=gun&security=tls&encryption=none&type=grpc&serviceName=GunService&sni=${sni}#$user"
 systemctl restart sl-vmess-grpc.service
 systemctl restart sl-vless-grpc.service
 service cron restart
@@ -66,7 +67,7 @@ echo -e "Mode              : Gun"
 echo -e "Security          : TLS"
 echo -e "Type              : grpc"
 echo -e "Service Name      : GunService"
-echo -e "SNI               : ${domain}"
+echo -e "SNI               : ${sni}"
 echo -e "================================="
 echo -e "Link VMess GRPC  : "
 echo -e "${vmesslink1}"

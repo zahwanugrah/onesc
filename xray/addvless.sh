@@ -43,14 +43,15 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 	done
 uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "Expired (Days) : " masaaktif
+read -p "SNI (bug) : " sni
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#xray-vless-tls$/a\#### '"$user $exp"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
 sed -i '/#xray-vless-nontls$/a\#### '"$user $exp"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
-xrayvless1="vless://${uuid}@${domain}:$tls?path=/vless/&security=tls&encryption=none&type=ws#${user}"
-xrayvless2="vless://${uuid}@${domain}:$nontls?path=/vless/&encryption=none&type=ws#${user}"
+xrayvless1="vless://${uuid}@${domain}:$tls?path=/vless/&security=tls&encryption=none&type=ws&sni=$sni#${user}"
+xrayvless2="vless://${uuid}@${domain}:$nontls?path=/vless/&encryption=none&type=ws&sni=$sni#${user}"
 systemctl restart xray.service
 service cron restart
 clear

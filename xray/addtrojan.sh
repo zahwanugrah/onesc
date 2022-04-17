@@ -41,12 +41,13 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
 		fi
 	done
 read -p "Expired (Days) : " masaaktif
+read -p "SNI (BUG)     : " sni
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#xray-trojan$/a\#&# '"$user $exp"'\
 },{"password": "'""$user""'","email": "'""$user""'"' /etc/xray/config.json
 systemctl restart xray.service
-trojanlink="trojan://${user}@${domain}:${tr}"
+trojanlink="trojan://${user}@${domain}:${tr}?sni=$sni#$user""
 service cron restart
 clear
 echo -e ""
