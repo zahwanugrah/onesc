@@ -1,38 +1,54 @@
 #!/bin/bash
+#Menu
+
+RED='\033[0;31m'
+NC='\033[0m'
+GREEN='\033[0;32m'
+ORANGE='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0;37m'
 clear
-m="\033[0;1;36m"
-y="\033[0;1;37m"
-yy="\033[0;1;32m"
-yl="\033[0;1;33m"
-wh="\033[0m"
+MYIP=$(curl -sS ipv4.icanhazip.com)
+name=$(curl -sS https://raw.githubusercontent.com/rajakapur/terimaip/main/authipvps | grep $MYIP | awk '{print $2}')
+exp=$(curl -sS https://raw.githubusercontent.com/rajakapur/terimaip/main/authipvps | grep $MYIP | awk '{print $3}')
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${BLUE}║       AutoScript VPN By Mr.Trick        ║${NC}"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "Uptime : $(neofetch | grep Uptime | cut -d " " -f 2-100)"
+echo -e "Domain : $(cat /etc/xray/domain)"
+echo -e "IP VPS : $MYIP"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
-echo -e "\e[1;33m=============================-Menu-=============================\e[0m'"
-echo -e "\e[1;33m*               Senarai Menu yang Disediakan\e[0m"
+echo -e "[${CYAN}1${NC}] • >> SSH & OpenVPN MENU  $wh"
+echo -e "[${CYAN}2${NC}] • >> L2TP MENU$wh"
+echo -e "[${CYAN}3${NC}] • >> PPTP MENU$wh"
+echo -e "[${CYAN}4${NC}] • >> SSTP MENU$wh"
+echo -e "[${CYAN}5${NC}] • >> WIREGUARD MENU$wh"
+echo -e "[${CYAN}6${NC}] • >> SHADOWSOCKS MENU$wh"
+echo -e "[${CYAN}7${NC}] • >> SHADOWSOCKSR MENU$wh"
+echo -e "[${CYAN}8${NC}] • >> XRAY VMESS MENU$wh"
+echo -e "[${CYAN}9${NC}] • >> XRAY VLESS MENU$wh"
+echo -e "[${CYAN}10${NC}]• >> XRAY TROJAN MENU$wh"
+echo -e "[${CYAN}11${NC}]• >> TROJAN GO MENU$wh"
+echo -e "[${CYAN}12${NC}]• >> XRAY GRPC MENU$wh"
+echo -e "[${CYAN}13${NC}]• >> SLOWDNS MENU (OFF)$wh"
+echo -e "[${CYAN}14${NC}]• >> CEK SEMUA IP PORT$wh"
+echo -e "[${CYAN}15${NC}]• >> CEK SEMUA SERVICE VPN$wh"
+echo -e "[${CYAN}16${NC}]• >> UPDATE MENU (Update 2x)$wh"
+echo -e "[${CYAN}17${NC}]• >> SL-FIX (Perbaiki Error SSLH+WS-TLS setelah reboot)$wh"
+echo -e "[${CYAN}18${NC}]• >> Settings (Pengaturan)$wh"
+echo -e "[${CYAN}19${NC}]• >> Exit (Keluar)$wh"
+echo -e "[${CYAN}20${NC}]• >> copyrepo (Salin Repo Script Mantap)$wh"
+echo -e "[${CYAN}21${NC}]• >> menuinfo (Untuk Mendapatkan Informasi)$wh"
+echo -e "[${CYAN}22${NC}]• >> Shadowsocks Plugin Menu (OFFLINE)$wh"
 echo -e ""
-echo -e "\e[1;33m=========================-List Protocol-========================\e[0m'"
-echo -e "$yy 1$y.  SSH & OpenVPN MENU  $wh"
-echo -e "$yy 2$y.  L2TP MENU$wh"
-echo -e "$yy 3$y.  PPTP MENU$wh"
-echo -e "$yy 4$y.  SSTP MENU$wh"
-echo -e "$yy 5$y.  WIREGUARD MENU$wh"
-echo -e "$yy 6$y.  SHADOWSOCKS MENU$wh"
-echo -e "$yy 7$y.  SHADOWSOCKSR MENU$wh"
-echo -e "$yy 8$y.  XRAY VMESS MENU$wh"
-echo -e "$yy 9$y.  XRAY VLESS MENU$wh"
-echo -e "$yy 10$y. XRAY TROJAN MENU$wh"
-echo -e "$yy 11$y. TROJAN GO MENU$wh"
-echo -e "$yy 12$y. XRAY GRPC MENU$wh"
-echo -e "$yy 13$y. SLOWDNS MENU (OFF)$wh"
-echo -e "$yy 14$y. CEK SEMUA IP PORT$wh"
-echo -e "$yy 15$y. CEK SEMUA SERVICE VPN$wh"
-echo -e "$yy 16$y. UPDATE MENU (Update 2x)$wh"
-echo -e "$yy 17$y. SL-FIX (Perbaiki Error SSLH+WS-TLS setelah reboot)$wh"
-echo -e "$yy 18$y. Settings (Pengaturan)$wh"
-echo -e "$yy 19$y. Exit (Keluar)$wh"
-echo -e "$yy 20$y. copyrepo (Salin Repo Script Mantap)$wh"
-echo -e "$yy 21$y. menuinfo (Untuk Mendapatkan Informasi)$wh"
-echo -e "$yy 22$y. Shadowsocks Plugin Menu (OFFLINE)$wh"
-echo -e "$y-------------------------------------------------$wh"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "Version : ${BLUE}$(cat /home/ver)${NC}"
+echo -e "Client Name : $name"
+echo -e "Expired Date : $exp"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 read -p "Select From Options [ 1 - 22 ] : " menu
 case $menu in
 1)
