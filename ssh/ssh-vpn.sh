@@ -22,12 +22,11 @@ echo "neofetch --ascii_distro SliTaz" >> .profile
 echo "echo -e '\e[35m  Script Premium By \e[32m Harithwyd \e[0m'" >> .profile
 
 cd /usr/bin
-wget -O menu "https://raw.githubusercontent.com/rajakapur/onesc/main/menu.sh"
-wget -O banner "https://raw.githubusercontent.com/rajakapur/onesc/main/banner.sh"
-wget -O colour "https://raw.githubusercontent.com/rajakapur/onesc/main/colour.sh"
+wget -O menu "https://raw.githubusercontent.com/rajakapur/onesc/main/update/menu.sh"
+wget -O banner "https://raw.githubusercontent.com/rajakapur/onesc/main/Nama-Banner/banner.sh"
+wget -O colour "https://raw.githubusercontent.com/rajakapur/onesc/main/Nama-Banner/colour.sh"
 chmod +x menu
 chmod +x banner
-chmod +x menutry
 chmod +x colour
 #chmod +x menu-theme
 #paste ini di setup anda
