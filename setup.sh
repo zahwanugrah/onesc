@@ -35,9 +35,9 @@ akbarvpnnnnnnnnn="raw.githubusercontent.com/rajakapur/onesc/main/websocket"
 akbarvpnnnnnnnnnn="raw.githubusercontent.com/rajakapur/onesc/main/ohp"
 
 # Getting
-MYIP=$(wget -qO- ipinfo.io/ip);
-echo "Checking VPS"
-IZIN=$(wget -qO- ipinfo.io/ip);
+#MYIP=$(wget -qO- ipinfo.io/ip);
+#echo "Checking VPS"
+#IZIN=$(wget -qO- ipinfo.io/ip);
 
 rm -f setup.sh
 clear
