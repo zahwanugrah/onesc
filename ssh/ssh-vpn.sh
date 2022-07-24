@@ -223,7 +223,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 
 # install squid (proxy nya aku matikan)
 cd
-apt -y install squid3
+apt -y install squid
 wget -O /etc/squid/squid.conf "https://${akbarvpn}/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
