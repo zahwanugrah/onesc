@@ -66,7 +66,7 @@ wget https://${akbarvpnnnnnnnnn}/edu.sh && chmod +x edu.sh && ./edu.sh
 # Ohp Server
 wget https://${akbarvpnnnnnnnnnn}/ohp.sh && chmod +x ohp.sh && ./ohp.sh
 # Install SlowDNS
-wget https://raw.githubusercontent.com/rajakapur/onesc/main/SLDNS/install-sldns && chmod +x install-sldns && ./install-sldns
+wget https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/SLDNS/install-sldns && chmod +x install-sldns && ./install-sldns
 # Informasi IP Saya dan Semua Port TCP UDP
 # wget https://raw.githubusercontent.com/rajakapur/onesc/main/ipsaya.sh && chmod +x ipsaya.sh
 #
