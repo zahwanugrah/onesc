@@ -22,9 +22,9 @@ echo "neofetch --ascii_distro SliTaz" >> .profile
 echo "echo -e '\e[35m  Script Premium By \e[32m Harithwyd \e[0m'" >> .profile
 
 cd /usr/bin
-wget -O menu "https://raw.githubusercontent.com/rajakapur/onesc/main/update/menu.sh"
-wget -O banner "https://raw.githubusercontent.com/rajakapur/onesc/main/Nama-Banner/banner.sh"
-wget -O colour "https://raw.githubusercontent.com/rajakapur/onesc/main/Nama-Banner/colour.sh"
+wget -O menu "https://raw.githubusercontent.com/zahwanugrah/onesc/main/update/menu.sh"
+wget -O banner "https://raw.githubusercontent.com/zahwanugrah/onesc/main/Nama-Banner/banner.sh"
+wget -O colour "https://raw.githubusercontent.com/zahwanugrah/onesc/main/Nama-Banner/colour.sh"
 chmod +x menu
 chmod +x banner
 chmod +x colour
@@ -51,16 +51,16 @@ LIGHT='\033[0;37m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 # ==================================================
 # Link Hosting Kalian
-akbarvpn="raw.githubusercontent.com/rajakapur/onesc/main/ssh"
+akbarvpn="raw.githubusercontent.com/zahwanugrah/onesc/main/ssh"
 
 # Link Hosting Kalian Untuk Xray
-akbarvpnn="raw.githubusercontent.com/rajakapur/onesc/main/xray"
+akbarvpnn="raw.githubusercontent.com/zahwanugrah/onesc/main/xray"
 
 # Link Hosting Kalian Untuk Trojan Go
-akbarvpnnn="raw.githubusercontent.com/rajakapur/onesc/main/trojango"
+akbarvpnnn="raw.githubusercontent.com/zahwanugrah/onesc/main/trojango"
 
 # Link Hosting Kalian Untuk Stunnel5
-akbarvpnnnn="raw.githubusercontent.com/rajakapur/onesc/main/stunnel5"
+akbarvpnnnn="raw.githubusercontent.com/zahwanugrah/onesc/main/stunnel5"
 
 # initializing var
 export DEBIAN_FRONTEND=noninteractive
@@ -411,7 +411,7 @@ cd /usr/bin
 wget -O addhost "https://${akbarvpn}/addhost.sh"
 wget -O slhost "https://${akbarvpn}/slhost.sh"
 wget -O about "https://${akbarvpn}/about.sh"
-wget -O menu "https://raw.githubusercontent.com/rajakapur/onesc/main/update/menu.sh"
+wget -O menu "https://raw.githubusercontent.com/zahwanugrah/onesc/main/update/menu.sh"
 wget -O addssh "https://${akbarvpn}/addssh.sh"
 wget -O trialssh "https://${akbarvpn}/trialssh.sh"
 wget -O delssh "https://${akbarvpn}/delssh.sh"
@@ -458,28 +458,28 @@ wget -O addtrgo "https://${akbarvpnnn}/addtrgo.sh"
 wget -O deltrgo "https://${akbarvpnnn}/deltrgo.sh"
 wget -O renewtrgo "https://${akbarvpnnn}/renewtrgo.sh"
 wget -O cektrgo "https://${akbarvpnnn}/cektrgo.sh"
-wget -O portsshnontls "https://raw.githubusercontent.com/rajakapur/onesc/main/websocket/portsshnontls.sh"
-wget -O portsshws "https://raw.githubusercontent.com/rajakapur/onesc/main/websocket/portsshws.sh"
+wget -O portsshnontls "https://raw.githubusercontent.com/zahwanugrah/onesc/main/websocket/portsshnontls.sh"
+wget -O portsshws "https://raw.githubusercontent.com/zahwanugrah/onesc/main/websocket/portsshws.sh"
 
-wget -O ipsaya "https://raw.githubusercontent.com/rajakapur/onesc/main/update/ipsaya.sh"
-wget -O sshovpnmenu "https://raw.githubusercontent.com/rajakapur/onesc/main/update/sshovpn.sh"
-wget -O l2tpmenu "https://raw.githubusercontent.com/rajakapur/onesc/main/update/l2tpmenu.sh"
-wget -O pptpmenu "https://raw.githubusercontent.com/rajakapur/onesc/main/update/pptpmenu.sh"
-wget -O sstpmenu "https://raw.githubusercontent.com/rajakapur/onesc/main/update/sstpmenu.sh"
-wget -O wgmenu "https://raw.githubusercontent.com/rajakapur/onesc/main/update/wgmenu.sh"
-wget -O ssmenu "https://raw.githubusercontent.com/rajakapur/onesc/main/update/ssmenu.sh"
-wget -O ssrmenu "https://raw.githubusercontent.com/rajakapur/onesc/main/update/ssrmenu.sh"
-wget -O vmessmenu "https://raw.githubusercontent.com/rajakapur/onesc/main/update/vmessmenu.sh"
-wget -O vlessmenu "https://raw.githubusercontent.com/rajakapur/onesc/main/update/vlessmenu.sh"
-wget -O grpcmenu "https://raw.githubusercontent.com/rajakapur/onesc/main/update/grpcmenu.sh"
-wget -O grpcupdate "https://raw.githubusercontent.com/rajakapur/onesc/main/update/grpcupdate.sh"
-wget -O trmenu "https://raw.githubusercontent.com/rajakapur/onesc/main/update/trmenu.sh"
-wget -O trgomenu "https://raw.githubusercontent.com/rajakapur/onesc/main/update/trgomenu.sh"
-wget -O setmenu "https://raw.githubusercontent.com/rajakapur/onesc/main/update/setmenu.sh"
-wget -O slowdnsmenu "https://raw.githubusercontent.com/rajakapur/onesc/main/update/slowdnsmenu.sh"
-wget -O running "https://raw.githubusercontent.com/rajakapur/onesc/main/update/running.sh"
-wget -O updatemenu "https://raw.githubusercontent.com/rajakapur/onesc/main/update/updatemenu.sh"
-wget -O sl-fix "https://raw.githubusercontent.com/rajakapur/onesc/main/sslh-fix/sl-fix"
+wget -O ipsaya "https://raw.githubusercontent.com/zahwanugrah/onesc/main/update/ipsaya.sh"
+wget -O sshovpnmenu "https://raw.githubusercontent.com/zahwanugrah/onesc/main/update/sshovpn.sh"
+wget -O l2tpmenu "https://raw.githubusercontent.com/zahwanugrah/onesc/main/update/l2tpmenu.sh"
+wget -O pptpmenu "https://raw.githubusercontent.com/zahwanugrah/onesc/main/update/pptpmenu.sh"
+wget -O sstpmenu "https://raw.githubusercontent.com/zahwanugrah/onesc/main/update/sstpmenu.sh"
+wget -O wgmenu "https://raw.githubusercontent.com/zahwanugrah/onesc/main/update/wgmenu.sh"
+wget -O ssmenu "https://raw.githubusercontent.com/zahwanugrah/onesc/main/update/ssmenu.sh"
+wget -O ssrmenu "https://raw.githubusercontent.com/zahwanugrah/onesc/main/update/ssrmenu.sh"
+wget -O vmessmenu "https://raw.githubusercontent.com/zahwanugrah/onesc/main/update/vmessmenu.sh"
+wget -O vlessmenu "https://raw.githubusercontent.com/zahwanugrah/onesc/main/update/vlessmenu.sh"
+wget -O grpcmenu "https://raw.githubusercontent.com/zahwanugrah/onesc/main/update/grpcmenu.sh"
+wget -O grpcupdate "https://raw.githubusercontent.com/zahwanugrah/onesc/main/update/grpcupdate.sh"
+wget -O trmenu "https://raw.githubusercontent.com/zahwanugrah/onesc/main/update/trmenu.sh"
+wget -O trgomenu "https://raw.githubusercontent.com/zahwanugrah/onesc/main/update/trgomenu.sh"
+wget -O setmenu "https://raw.githubusercontent.com/zahwanugrah/onesc/main/update/setmenu.sh"
+wget -O slowdnsmenu "https://raw.githubusercontent.com/zahwanugrah/onesc/main/update/slowdnsmenu.sh"
+wget -O running "https://raw.githubusercontent.com/zahwanugrah/onesc/main/update/running.sh"
+wget -O updatemenu "https://raw.githubusercontent.com/zahwanugrah/onesc/main/update/updatemenu.sh"
+wget -O sl-fix "https://raw.githubusercontent.com/zahwanugrah/onesc/main/sslh-fix/sl-fix"
 
 chmod +x sl-fix
 chmod +x ipsaya
